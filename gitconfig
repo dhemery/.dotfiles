@@ -1,0 +1,24 @@
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[user]
+	name = Dale Emery
+	email = dale@dhemery.com
+[core]
+	excludesfile = /Users/Dale/.gitignore_global
+	autocrlf = input
+[format]
+	pretty = oneline
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = true
+[merge]
+	conflictstyle = diff3
+[push]
+	default = simple
