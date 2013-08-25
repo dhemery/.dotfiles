@@ -11,7 +11,7 @@ export MANPATH=/usr/local/share/man:$MANPATH
 export PATH=.:~/.bin:$PATH:/usr/local/sbin
 
 alias apache="sudo apachectl"
-alias la="ls -Flags"
+alias la="ls -Flas"
 alias path="echo $PATH"
 alias todo="grep TODO"
 
