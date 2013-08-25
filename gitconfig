@@ -1,53 +1,29 @@
-# vim: set ft=gitconfig tabstop=8 sw=8 noexpandtab cindent:
-
 [alias]
-	s = status
-	a = add
-	aa = add -A
-	b = branch
-	c = commit
-	ca = commit -a
-	cl = clone
-	d = diff
-	f = fetch
-	g = grep
-	h = help
-	hc = clone git@github.com:dhemery/
-	l = log
-	m = merge
-	my = "!sh -c 'git clone git@github.com:dhemery/$1' - "
-	o = checkout
-	r = rebase
-	s = status
-	sc = svn dcommit
-	sr = svn rebase
-	si = submodule init
-	su = submodule update
-	pl = pull
-	pr = pull --rebase
-	ph = push
+    my = "!sh -c 'git clone git@github.com:dhemery/$1' - "
+    st = status
 
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+    branch = auto
+    diff = auto
+    grep = auto
+    status = auto
 
 [core]
-	excludesfile = /Users/Dale/.gitignore_global
-	autocrlf = input
+    excludesfile = ~/.gitignore_global
+    autocrlf = input
 
 [format]
-	pretty = oneline
+    pretty = oneline
 
 [merge]
-	conflictstyle = diff3
+    conflictstyle = diff3
 
 [push]
-	default = simple
+    default = simple
 
 [user]
-	name = Dale Emery
-	email = dale@dhemery.com
+    name = Dale Emery
+    email = dale@dhemery.com
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
