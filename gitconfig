@@ -1,6 +1,9 @@
 [alias]
     my = "!sh -c 'git clone git@github.com:dhemery/$1' -"
 
+[credential]
+    helper = osxkeychain
+
 [color]
     branch = auto
     diff = auto
@@ -14,6 +17,9 @@
 [format]
     pretty = oneline
 
+[include]
+    path = .dale/gitconfig
+
 [merge]
     conflictstyle = diff3
 
@@ -23,6 +29,3 @@
 [user]
     name = Dale Emery
     email = dale@dhemery.com
-
-[credential]
-    helper = osxkeychain
