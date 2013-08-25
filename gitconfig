@@ -25,7 +25,7 @@
 	su = submodule update
 	p = pull
 	pr = pull --rebase
-	u = push
+	up = push
 
 [color]
 	branch = auto
@@ -41,6 +41,9 @@
 
 [merge]
 	conflictstyle = diff3
+
+[push]
+	default = simple
 
 [user]
 	name = Dale Emery
