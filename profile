@@ -19,29 +19,7 @@ sim () { `xcode-select -print-path`/Platforms/iPhoneSimulator.platform/Developer
 simapp () { sim -SimulateApplication "$@"; }
 todo () { grep TODO "$@"; }
 
-clone () { g clone git@github.com:dhemery/"$@"; }
-g () { git "$@"; }
-ga () { g add "$@"; }
-gaa () { ga -A "$@"; }
-gb () { g branch "$@"; }
-gc () { g commit "$@"; }
-gca () { gc -a "$@"; }
-gd () { g diff "$@"; }
-gf () { g fetch "$@"; }
-gg () { g grep "$@"; }
-gh () { g help "$@"; }
-gl () { g log "$@"; }
-gm () { g merge "$@"; }
-go () { g checkout "$@"; }
-gr () { g rebase "$@"; }
-gs () { g status "$@"; }
-gsc () { g svn dcommit "%@"; }
-gsr () { g svn rebase "$@"; }
-gsi () { g submodule init ; }
-gsu () { g submodule update ; }
-pre () { pull --rebase "$@"; }
-pull () { g pull "$@"; }
-push () { g push "$@"; }
+g() { git "$@"; }
 
 # Show * if unstanged changes, + if staged
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -107,6 +85,9 @@ function directory_to_titlebar {
 if [[ "$TERM" == "xterm" || "$TERM" == "xterm-color" || "$TERM" == "xterm-256color" ]] ; then
  export PROMPT_COMMAND="directory_to_titlebar"
 fi
+
+# Autocomplete for 'g' as well
+complete -o default -o nospace -F _git g
 
 # Load local settings not under version control
 source ~/.dale/profile
