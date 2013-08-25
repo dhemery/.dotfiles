@@ -10,16 +10,16 @@ export LESSEDIT='sub -l %lm %f'
 export MANPATH=/usr/local/share/man:$MANPATH
 export PATH=.:~/.bin:$PATH:/usr/local/sbin
 
+alias apache="sudo apachectl"
+alias g="git"
+alias la="ls -Flags"
+alias path="echo $PATH"
+alias todo="grep TODO"
+
 ad () { asciidoc -o - "$@" | bcat; }
-apache () { sudo apachectl "$@"; }
 jdk () { export JAVA_HOME=`/usr/libexec/java_home -v 1."$@"`; }
-la () { ls -Flags "$@"; }
-path () { echo "$PATH"; }
 sim () { `xcode-select -print-path`/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator "$@"; }
 simapp () { sim -SimulateApplication "$@"; }
-todo () { grep TODO "$@"; }
-
-g() { git "$@"; }
 
 # Show * if unstanged changes, + if staged
 export GIT_PS1_SHOWDIRTYSTATE=1
