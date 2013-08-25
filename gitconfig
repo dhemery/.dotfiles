@@ -1,6 +1,5 @@
 [alias]
-    my = "!sh -c 'git clone git@github.com:dhemery/$1' - "
-    st = status
+    my = "!sh -c 'git clone git@github.com:dhemery/$1' -"
 
 [color]
     branch = auto

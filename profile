@@ -11,10 +11,34 @@ export MANPATH=/usr/local/share/man:$MANPATH
 export PATH=.:~/.bin:$PATH:/usr/local/sbin
 
 alias apache="sudo apachectl"
-alias g="git"
 alias la="ls -Flags"
 alias path="echo $PATH"
 alias todo="grep TODO"
+
+alias g="git"
+alias ga="g add"
+alias gaa="ga -A"
+alias gb="g branch"
+alias gc="g commit"
+alias gca="gc -a"
+alias gd="g diff"
+alias gdc="gd --cached"
+alias gf="g fetch"
+alias gg="g grep"
+alias gh="g help"
+alias gl="g log"
+alias gm="g merge"
+alias gmy="g my"
+alias go="g checkout"
+alias gr="g rebase"
+alias gs="g status"
+alias gsr="g svn rebase"
+alias gsi="g submodule init"
+alias gsu="g submodule update"
+
+alias pull="g pull"
+alias push="g push"
+alias pre="pull --rebase"
 
 ad () { asciidoc -o - "$@" | bcat; }
 jdk () { export JAVA_HOME=`/usr/libexec/java_home -v 1."$@"`; }
@@ -22,21 +46,28 @@ sim () { `xcode-select -print-path`/Platforms/iPhoneSimulator.platform/Developer
 simapp () { sim -SimulateApplication "$@"; }
 
 # Show * if unstanged changes, + if staged
-export GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWDIRTYSTATE=1
 # Show $ if stash
-export GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
 # Show % if untracked files
-export GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
 # Show < if behind upstream, > if ahead, <> if diverged
-export GIT_PS1_SHOWUPSTREAM='auto verbose'
+GIT_PS1_SHOWUPSTREAM='auto verbose'
 source ~/.git-completion.bash
 
+# Autocomplete for 'g' as well
+complete -o default -o nospace -F _git g
+
+BLUE="\[\e[34m\]"
+RED="\[\e[31m\]"
+BLACK="\[\e[0m\]"
+
 # Show current directory in blue.
-DALE_PS1_DIR='\[\e[34m\]\W'
+DALE_PS1_DIR="$BLUE\W"
 # Show git status in red.
-DALE_PS1_GIT='\[\e[31m\]$(__git_ps1 " (%s)")'
+DALE_PS1_GIT="$RED"'$(__git_ps1 " (%s)")'
 # Show prompt in black.
-DALE_PS1_PROMPT='\[\e[0m\] $ '
+DALE_PS1_PROMPT="$BLACK $ "
 # Show directory, then git status, then prompt.
 export PS1=$DALE_PS1_DIR$DALE_PS1_GIT$DALE_PS1_PROMPT
 
@@ -85,9 +116,6 @@ function directory_to_titlebar {
 if [[ "$TERM" == "xterm" || "$TERM" == "xterm-color" || "$TERM" == "xterm-256color" ]] ; then
  export PROMPT_COMMAND="directory_to_titlebar"
 fi
-
-# Autocomplete for 'g' as well
-complete -o default -o nospace -F _git g
 
 # Load local settings not under version control
 source ~/.dale/profile
