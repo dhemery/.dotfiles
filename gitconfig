@@ -23,9 +23,9 @@
 	sr = svn rebase
 	si = submodule init
 	su = submodule update
-	p = pull
+	pl = pull
 	pr = pull --rebase
-	up = push
+	ph = push
 
 [color]
 	branch = auto
