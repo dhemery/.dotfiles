@@ -19,7 +19,12 @@
 [include]
     path = .dale/gitconfig
 
+[mergetool "opendiff"]
+    cmd = opendiff $LOCAL $REMOTE -ancestor $BASE -merge $MERGED
+    trustExitCode = true
+
 [merge]
+    tool = opendiff
     conflictstyle = diff3
 
 [push]
