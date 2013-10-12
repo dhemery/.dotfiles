@@ -14,13 +14,13 @@
     autocrlf = input
 
 [diff]
-    tool = Kaleidoscope
+    tool = opendiff
 
 [difftool]
     prompt = false
 
-[difftool "Kaleidoscope"]
-   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool "opendiff"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\" 
 
 [format]
     pretty = oneline
@@ -29,15 +29,14 @@
     path = .dale/gitconfig
 
 [merge]
-    tool = Kaleidoscope
+    tool = opendiff
     conflictstyle = diff3
-    prompt = false
 
 [mergetool]
     prompt = false
 
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[mergetool "opendiff"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\" -ancestor \"$BASE\"
     trustExitCode = true
 
 [push]
