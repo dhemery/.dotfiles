@@ -13,19 +13,32 @@
     excludesfile = ~/.gitignore_global
     autocrlf = input
 
+[diff]
+    tool = Kaleidoscope
+
+[difftool]
+    prompt = false
+
+[difftool "Kaleidoscope"]
+   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
 [format]
     pretty = oneline
 
 [include]
     path = .dale/gitconfig
 
-[mergetool "opendiff"]
-    cmd = opendiff $LOCAL $REMOTE -ancestor $BASE -merge $MERGED
-    trustExitCode = true
-
 [merge]
-    tool = opendiff
+    tool = Kaleidoscope
     conflictstyle = diff3
+    prompt = false
+
+[mergetool]
+    prompt = false
+
+[mergetool "Kaleidoscope"]
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustExitCode = true
 
 [push]
     default = simple
