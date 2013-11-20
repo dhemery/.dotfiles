@@ -1,7 +1,7 @@
 [alias]
 
 [credential]
-    helper = osxkeychain
+   helper = osxkeychain
 
 [color]
     branch = auto
@@ -34,6 +34,7 @@
 
 [mergetool]
     prompt = false
+    keepBackup = true
 
 [mergetool "opendiff"]
     cmd = opendiff "$LOCAL" "$REMOTE" -merge "$MERGED" -ancestor "$BASE"
@@ -41,6 +42,9 @@
 
 [push]
     default = simple
+
+[rerere]
+    enabled = true
 
 [user]
     name = Dale Emery
