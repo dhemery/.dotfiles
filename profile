@@ -24,11 +24,11 @@ alias gd="g diff"
 alias gdt="g difftool"
 alias gf="g fetch"
 alias gg="g grep"
-alias gh="github"
-alias ghc="github clone"
+ghc() { g clone git@github.com:"$1"/"$2"; }
 alias gl="g log"
 alias gm="g merge"
 alias gmt="g mergetool -y"
+gmy() { ghc dhemery "$1"; }
 alias gn="git clean"
 alias go="g checkout"
 alias gr="g rebase"
@@ -38,6 +38,7 @@ alias gsu="g submodule update --init"
 alias pull="g pull"
 alias push="g push"
 alias pre="pull --rebase"
+
 
 ad () { asciidoc -o - "$@" | bcat; }
 jdk () { export JAVA_HOME=`/usr/libexec/java_home -v 1."$@"`; }
