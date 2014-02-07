@@ -1,5 +1,8 @@
 # vim: set ft=sh:
 
+# Load local settings not under version control
+source ~/.dale/profile
+
 set -o vi
 shopt -s autocd
 
@@ -67,7 +70,7 @@ DALE_PS1_DIR="$BLUE\W"
 # Show git status in red.
 DALE_PS1_GIT="$RED"'$(__git_ps1 " (%s)")'
 # Show prompt in black.
-DALE_PS1_PROMPT="$BLACK $ "
+DALE_PS1_PROMPT="$BLACK $DALE_PS1_PROMPT_MARKER "
 # Show directory, then git status, then prompt.
 export PS1=$DALE_PS1_DIR$DALE_PS1_GIT$DALE_PS1_PROMPT
 
@@ -116,7 +119,3 @@ function directory_to_titlebar {
 if [[ "$TERM" == "xterm" || "$TERM" == "xterm-color" || "$TERM" == "xterm-256color" ]] ; then
  export PROMPT_COMMAND="directory_to_titlebar"
 fi
-
-# Load local settings not under version control
-source ~/.dale/profile
-
