@@ -69,10 +69,9 @@ BLACK="\[\e[0m\]"
 DALE_PS1_DIR="$BLUE\W"
 # Show git status in red.
 DALE_PS1_GIT="$RED"'$(__git_ps1 " (%s)")'
-# Show prompt in black.
-DALE_PS1_PROMPT="$BLACK $DALE_PS1_PROMPT_MARKER "
-# Show directory, then git status, then prompt.
-export PS1=$DALE_PS1_DIR$DALE_PS1_GIT$DALE_PS1_PROMPT
+DALE_PS1_PROMPT_MARKER="$BLACK $ "
+# Show identity, then directory, then git status.
+export PS1="$DALE_PS1_IDENTITY$DALE_PS1_DIR$DALE_PS1_GIT$DALE_PS1_PROMPT_MARKER"
 
 function directory_to_titlebar {
    local pwd_length=42  # The maximum length we want (seems to fit nicely
