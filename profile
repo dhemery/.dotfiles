@@ -1,7 +1,6 @@
 # vim: set ft=sh:
 
 # Load local settings not under version control
-source ~/.dale/profile
 
 set -o vi
 shopt -s autocd
@@ -31,22 +30,24 @@ ghc() { g clone git@github.com:"$1"/"$2"; }
 alias gl="g log"
 alias gm="g merge"
 alias gmt="g mergetool -y"
-gmy() { ghc dhemery "$1"; }
+alias gmy="ghc dhemery"
 alias gn="git clean"
 alias go="g checkout"
 alias gr="g rebase"
 alias gs="g status"
+alias gsf="g svn fetch"
 alias gsr="g svn rebase"
 alias gsu="g submodule update --init"
 alias pull="g pull"
 alias push="g push"
 alias pre="pull --rebase"
 
-
 ad () { asciidoc -o - "$@" | bcat; }
 jdk () { export JAVA_HOME=`/usr/libexec/java_home -v 1."$@"`; }
 sim () { `xcode-select -print-path`/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator "$@"; }
 simapp () { sim -SimulateApplication "$@"; }
+
+source ~/.dale/profile
 
 # Show * if unstanged changes, + if staged
 GIT_PS1_SHOWDIRTYSTATE=1
