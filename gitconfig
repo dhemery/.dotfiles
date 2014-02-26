@@ -10,7 +10,7 @@
     status = auto
 
 [core]
-    excludesfile = ~/.gitignore_global
+    excludesfile = /Users/Dale/.gitignore_global
     autocrlf = input
 
 [diff]
@@ -21,6 +21,9 @@
 
 [difftool "opendiff"]
     cmd = opendiff "$LOCAL" "$REMOTE"
+
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 
 [format]
     pretty = oneline
@@ -40,6 +43,9 @@
     cmd = opendiff "$LOCAL" "$REMOTE" -merge "$MERGED" -ancestor "$BASE"
     trustExitCode = true
 
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [push]
     default = simple
 
@@ -49,3 +55,4 @@
 [user]
     name = Dale Emery
     email = dale@dhemery.com
+path = 
