@@ -10,7 +10,7 @@ export EDITOR='vim'
 export HTML_TIDY=~/.tidyrc
 export LESSEDIT='sub -l %lm %f'
 export MANPATH=/usr/local/share/man:$MANPATH
-export PATH=.:~/.bin:$PATH:/usr/local/sbin
+export PATH=.:~/.dale/bin:/usr/local/bin:$PATH
 
 alias apache="sudo apachectl"
 alias la="ls -Flas"
