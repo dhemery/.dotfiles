@@ -15,7 +15,7 @@ export PATH=.:~/.dale/bin:/usr/local/bin:$PATH
 alias apache="sudo apachectl"
 alias la="ls -Flas"
 alias path="echo $PATH"
-alias todo="grep TODO"
+alias aps="cd ~/Library/Application\ Support/"
 
 alias g="git"
 alias ga="g add"
