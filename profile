@@ -17,6 +17,8 @@ alias la="ls -Flas"
 alias path="echo $PATH"
 alias aps="cd ~/Library/Application\ Support/"
 
+chapters() { csplit -k -f chapter- "$1" /^#/ {99999};  }
+
 alias g="git"
 alias ga="g add"
 alias gaa="ga -A"
