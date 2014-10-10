@@ -1,21 +1,20 @@
 # vim: set ft=sh:
 
-# Load local settings not under version control
-
 set -o vi
 shopt -s autocd
 
+PRIVATE="$HOME/.dale"
+
 export ANT_OPTS="-Xmx512m"
 export EDITOR='vim'
-export HTML_TIDY=~/.tidyrc
 export LESSEDIT='sub -l %lm %f'
 export MANPATH=/usr/local/share/man:$MANPATH
-export PATH=.:~/.dale/bin:/usr/local/bin:$PATH
+export PATH=.:$PRIVATE/bin:/usr/local/bin:$PATH
 
 alias apache="sudo apachectl"
 alias la="ls -Flas"
 alias path="echo $PATH"
-alias aps="cd ~/Library/Application\ Support/"
+alias aps="cd $HOME/Library/Application\ Support/"
 
 chapters() { csplit -k -f chapter- "$1" /^#/ {99999};  }
 
@@ -50,7 +49,8 @@ jdk () { export JAVA_HOME=`/usr/libexec/java_home -v 1."$@"`; }
 sim () { `xcode-select -print-path`/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app/Contents/MacOS/iPhone\ Simulator "$@"; }
 simapp () { sim -SimulateApplication "$@"; }
 
-source ~/.dale/profile
+# Load local private settings not published to github
+source "$PRIVATE/profile"
 
 # Show * if unstanged changes, + if staged
 GIT_PS1_SHOWDIRTYSTATE=1
@@ -60,7 +60,7 @@ GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 # Show < if behind upstream, > if ahead, <> if diverged
 GIT_PS1_SHOWUPSTREAM='auto verbose'
-source ~/.git-completion.bash
+source $HOME/.git-completion.bash
 
 # Autocomplete for 'g' as well
 complete -o default -o nospace -F _git g
