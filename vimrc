@@ -2,10 +2,18 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 "---------------------------------------------------------------
-" General settings
+" Determine file type.
+" - indent: allow intelligent autoindenting by filetype
+" - plugin: allow filetype-specific plugins
+filetype indent plugin on
+" To override the ftplugin default settings for a filetype, put
+" the preferred settings into:
+"   ~/.vim/ftplugin/language.vim
 "---------------------------------------------------------------
 
-set nocompatible
+"---------------------------------------------------------------
+" General settings
+"---------------------------------------------------------------
 
 " Make it easier to switch between files
 set hidden
@@ -14,7 +22,7 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 
-" Enable the user of the mouse for all modes
+" Enable the use of the mouse for all modes
 set mouse=a
 
 " Keep a longer history
@@ -69,7 +77,7 @@ set listchars=tab:>-,trail:·,eol:$
 
 " Gently highlight the current line and column
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 
 "---------------------------------------------------------------
 " Colors
@@ -77,14 +85,9 @@ set cursorcolumn
 
 " Enable syntax highlighting
 syntax on
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
-
-" Determine file type.
-" - indent: allow intelligent autoindenting by filetype
-" - plugin: allow filetype-specific plugins
-filetype indent plugin on
+" let g:solarized_termcolors=256
+" set background=dark
+" colorscheme solarized
 
 "---------------------------------------------------------------
 " Searching
@@ -102,17 +105,23 @@ set ignorecase
 set smartcase
 
 "---------------------------------------------------------------
-" Indenting
+" Indenting 
+"
+"   expandtab   In insert mode, expand tabs to spaces
+"   softtabstop In insert mode, tab inserts this many spaces
+"               Negative number means use shiftwidth.
+"   shiftwidth  How many columns to indent with >> and <<
 "---------------------------------------------------------------
 
-set shiftwidth=4
-set softtabstop=4
 set expandtab
+set softtabstop=-1
+set shiftwidth=4
 
+" Copy the indentation of the previous line
 set autoindent
 
 " Stop certain movements from going to first character of line
-set nostartofline
+" set nostartofline
 
 "--------------------------------------------------------------
 " Key mapping
@@ -121,20 +130,16 @@ set nostartofline
 " Use comma as leader
 let mapleader = ","
 
+" Toggle search highlights
+nnoremap <leader>h :set hlsearch!<CR>
+
 " ,s
 " show/hide invisible characters
-nmap <silent> <leader>s :set list!
+nnoremap <silent> <leader>s :set list!
 
 " ,md
-" convert markdown contents to HTML and open in browser
-" (requires the bcat gem to be installed)
-nmap <leader>md :silent !open -a Marked.app '%:p'<cr>
-
-" ,ad
-" convert ASCIIDoc contents to HTML and open in browser
-" (requires the bcat gem to be installed)
-nmap <leader>ad :silent !asciidoc -o - '%:p' \| bcat &<cr> \| :redraw!<cr>
-
+" Open in Marked 2
+nnoremap <leader>md :silent !open -a Marked\ 2.app '%:p'<cr> \| :redraw!<cr>
 
 " <F11>
 " toggle paste / nopaste
@@ -145,7 +150,8 @@ nnoremap ` '
 nnoremap ' `
 
 " <F1> Because my damned fat fingers hit <F1> when I reach for <Esc>
-map <F1> <Esc>
+noremap <F1> <Esc>
+inoremap <F1> <Esc>
 
 " Make Y yank to end of line
 map Y y$
@@ -157,20 +163,9 @@ runtime macros/matchit.vim
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-autocmd BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn
-      \ if &ft =~# '^\%(conf\|modula2\)$' |
-      \   set ft=markdown |
-      \ else |
-      \   setf markdown |
-      \ endif
-
-autocmd BufNewFile,BufRead *.ad,*.asciidoc,*.adoc
-      \ setlocal filetype=asciidoc
+autocmd BufNewFile,BufRead *.markdown,*.md set filetype=markdown
 
 let g:surround_{char2nr('c')} = "`\r`"
 let g:surround_{char2nr('o')} = "**\r**"
 let g:surround_{char2nr('i')} = "_\r_"
 
-nnoremap <leader>h :set hlsearch!<CR>
-
-inoremap <F1> <Esc>
