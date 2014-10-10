@@ -12,7 +12,7 @@ export MANPATH=/usr/local/share/man:$MANPATH
 export PATH=.:$PRIVATE/bin:/usr/local/bin:$PATH
 
 alias apache="sudo apachectl"
-alias la="ls -Flas"
+alias la="ls -GFlas"
 alias path="echo $PATH"
 alias aps="cd $HOME/Library/Application\ Support/"
 
