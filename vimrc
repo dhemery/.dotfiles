@@ -137,10 +137,6 @@ nnoremap <leader>h :set hlsearch!<CR>
 " show/hide invisible characters
 nnoremap <silent> <leader>s :set list!
 
-" ,md
-" Open in Marked 2
-nnoremap <leader>md :silent !open -a Marked\ 2.app '%:p'<cr> \| :redraw!<cr>
-
 " <F11>
 " toggle paste / nopaste
 set pastetoggle=<F11>
