@@ -8,9 +8,6 @@ set wildmode=list:longest
 " Enable the mouse in all modes
 set mouse=a
 
-" Allow backspace across indents, lines, start of insert
-set backspace=indent,eol,start
-
 "--------------------------------------------------------------
 " Key mapping
 "--------------------------------------------------------------
