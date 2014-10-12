@@ -21,11 +21,9 @@ let mapleader = "," " Use comma as leader
 " Filetype
 "---------------------------------------------------------------
 
-filetype plugin on  " allow filetype-specific plugins
-filetype indent on  " allow intelligent autoindenting by filetype
-
-" *.md is markdown, not Modula
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+filetype on         " enable filetype detection
+filetype plugin on  " enable filetype-specific plugins
+filetype indent on  " enable filetype-specific indentation
 
 "---------------------------------------------------------------
 " Display
