@@ -1,8 +1,3 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
-let g:netrw_liststyle=3
-
 "---------------------------------------------------------------
 " Determine file type.
 " - indent: allow intelligent autoindenting by filetype
