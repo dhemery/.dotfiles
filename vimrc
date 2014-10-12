@@ -46,10 +46,6 @@ set listchars=tab:>-,trail:·,eol:$
 " ,s: Toggle showing invisible chracters
 nnoremap <silent> <leader>s :set list!
 
-" Something is erasing cursorline updates.
-" Redraw after every cursor move to restor it.
-autocmd CursorMoved * redraw!
-
 "---------------------------------------------------------------
 " Colors
 "---------------------------------------------------------------
