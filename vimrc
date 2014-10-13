@@ -2,11 +2,15 @@
 " General settings
 "---------------------------------------------------------------
 
+set nocompatible    " Make Vim more vim-like, less vi-like.
+
 " Make command completion show all options, not only first match
 set wildmode=list:longest
 
 " Enable the mouse in all modes
 set mouse=a
+
+set exrc            " Read any .vimrc file in the startup dir.
 
 "--------------------------------------------------------------
 " Key mapping
