@@ -4,13 +4,17 @@
 
 set nocompatible    " Make Vim more vim-like, less vi-like.
 
-" Make command completion show all options, not only first match
-set wildmode=list:longest
-
 " Enable the mouse in all modes
 set mouse=a
 
 set exrc            " Read any .vimrc file in the startup dir.
+
+"--------------------------------------------------------------
+" Command completion
+"--------------------------------------------------------------
+
+set wildmenu        " Enable the completion menu.
+set wildmode=full   " Launch completion if multiple matches.
 
 "--------------------------------------------------------------
 " Key mapping
