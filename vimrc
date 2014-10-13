@@ -80,3 +80,13 @@ set shiftwidth=4    " # columns to indent with >> and <<
 set softtabstop=-1  " Insert mode inserts 'shiftwidth' spaces
 set autoindent      " Copy the indentation of the previous line
 
+"---------------------------------------------------------------
+" Moving around
+"---------------------------------------------------------------
+
+" Use arrow keys to switch windows
+nnoremap <Up> <C-w>k
+nnoremap <Down> <C-w>j
+nnoremap <Left> <C-w>h
+nnoremap <Right> <C-w>l
+
