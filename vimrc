@@ -5,7 +5,6 @@
 set nocompatible    " Make Vim more vim-like, less vi-like.
 set hidden          " Abandoning a buffer (e.g. by opening
                     " another file) hides it instead of closing.
-set mouse=a         " Enable the mouse in all modes
 set exrc            " Read any .vimrc file in the startup dir.
 
 "--------------------------------------------------------------
@@ -42,7 +41,9 @@ set cmdheight=2     " Set the command window to 2 lines, to
                     " avoid having to press <enter> to continue
 set visualbell      " Visual bell instead of beeping ...
 set t_vb=           " ... and turn off the bell altogether
+set t_Co=256        " Use all 256 of the terminal's colors.
 set cursorline      " Highlight the line the cursor is on
+set linebreak       " Wrap lines at more reasonable places.
 
 " Consider tabs, trailing space, eol as invisible characters
 set listchars=tab:>-,trail:·,eol:$
@@ -68,7 +69,7 @@ set incsearch       " Highlight match while typing
 autocmd InsertEnter * :setlocal nohlsearch
 
 " Toggle search highlights
-nnoremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>/ :set hlsearch!<CR>
 
 "---------------------------------------------------------------
 " Formatting
@@ -80,12 +81,21 @@ set softtabstop=-1  " Insert mode inserts 'shiftwidth' spaces
 set autoindent      " Copy the indentation of the previous line
 
 "---------------------------------------------------------------
-" Moving around
+" Motion
 "---------------------------------------------------------------
 
-" Use arrow keys to switch windows
-nnoremap <Up> <C-w>k
-nnoremap <Down> <C-w>j
-nnoremap <Left> <C-w>h
-nnoremap <Right> <C-w>l
+" j/k move one display line instead of one logical line.
+nnoremap j gj
+nnoremap k gk
 
+" Kill the arrow keys
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+
+" Navigate to neighboring windows.
+nnoremap <leader>h <c-w>h
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <leader>l <c-w>l
