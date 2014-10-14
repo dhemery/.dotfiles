@@ -3,10 +3,9 @@
 "---------------------------------------------------------------
 
 set nocompatible    " Make Vim more vim-like, less vi-like.
-
-" Enable the mouse in all modes
-set mouse=a
-
+set hidden          " Abandoning a buffer (e.g. by opening
+                    " another file) hides it instead of closing.
+set mouse=a         " Enable the mouse in all modes
 set exrc            " Read any .vimrc file in the startup dir.
 
 "--------------------------------------------------------------
@@ -72,7 +71,7 @@ autocmd InsertEnter * :setlocal nohlsearch
 nnoremap <leader>h :set hlsearch!<CR>
 
 "---------------------------------------------------------------
-" Indenting 
+" Formatting
 "---------------------------------------------------------------
 
 set expandtab       " Insert mode expands tabs to spaces
