@@ -1,0 +1,5 @@
+: ${BASE16_SCHEME:=default}
+: ${BASE16_MOOD:=dark}
+BASE16_SHELL="$HOME/.bash/base16/base16-$BASE16_SCHEME.$BASE16_MOOD";
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL;
+

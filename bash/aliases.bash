@@ -1,3 +1,4 @@
+alias envs='env | sort'
 alias la="ls -GFlas"
 alias path='echo -e ${PATH//:/\\n}'
 
@@ -30,4 +31,3 @@ alias push="g push"
 alias pre="pull --rebase"
 
 jdk () { export JAVA_HOME=`/usr/libexec/java_home -v 1."$@"`; }
-
