@@ -8,6 +8,37 @@ set hidden          " Abandoning a buffer (e.g. by opening
 set exrc            " Read any .vimrc file in the startup dir.
 
 "--------------------------------------------------------------
+" Plugins
+"--------------------------------------------------------------
+
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin() " Add plugins below this line.
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Color schemes
+Plugin 'chriskempson/base16-vim'
+
+call vundle#end()   " Add plugins above this line.
+
+"---------------------------------------------------------------
+" Filetype
+"---------------------------------------------------------------
+
+filetype on         " enable filetype detection
+filetype plugin on  " enable filetype-specific plugins
+filetype indent on  " enable filetype-specific indentation
+
+"--------------------------------------------------------------
 " Command completion
 "--------------------------------------------------------------
 
@@ -19,14 +50,6 @@ set wildmode=full   " Launch completion if multiple matches.
 "--------------------------------------------------------------
 
 let mapleader = "," " Use comma as leader
-
-"---------------------------------------------------------------
-" Filetype
-"---------------------------------------------------------------
-
-filetype on         " enable filetype detection
-filetype plugin on  " enable filetype-specific plugins
-filetype indent on  " enable filetype-specific indentation
 
 "---------------------------------------------------------------
 " Display
@@ -41,7 +64,6 @@ set cmdheight=2     " Set the command window to 2 lines, to
                     " avoid having to press <enter> to continue
 set visualbell      " Visual bell instead of beeping ...
 set t_vb=           " ... and turn off the bell altogether
-set t_Co=256        " Use all 256 of the terminal's colors.
 set cursorline      " Highlight the line the cursor is on
 set linebreak       " Wrap lines at more reasonable places.
 
@@ -55,6 +77,9 @@ nnoremap <silent> <leader>s :set list!
 " Colors
 "---------------------------------------------------------------
 
+set t_Co=256
+set background=dark
+colorscheme base16-default
 syntax enable       " Enable syntax highlighting
 
 "---------------------------------------------------------------
