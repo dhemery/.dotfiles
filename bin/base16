@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-export BASE16_SCHEME=${1:-default}
-export BASE16_MOOD=${2:-dark}
-BASE16_SHELL="$HOME/.bash/base16-shell/base16-$BASE16_SCHEME.$BASE16_MOOD.sh";
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL;
-

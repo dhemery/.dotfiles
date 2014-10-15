@@ -9,4 +9,3 @@ shopt -s autocd
 . "$HOME/.bash/git-completion.bash"
 . "$HOME/.bash/titlebar.bash"
 
-. $HOME/.bin/scheme tomorrow
