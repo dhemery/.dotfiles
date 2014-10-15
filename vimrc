@@ -24,9 +24,8 @@ call vundle#begin() " Add plugins below this line.
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'sjl/badwolf'
 
-" Color schemes
-Plugin 'chriskempson/base16-vim'
 
 call vundle#end()   " Add plugins above this line.
 
@@ -77,9 +76,8 @@ nnoremap <silent> <leader>s :set list!
 " Colors
 "---------------------------------------------------------------
 
-set t_Co=256
 set background=dark
-colorscheme base16-default
+colorscheme slate
 syntax enable       " Enable syntax highlighting
 
 "---------------------------------------------------------------
