@@ -9,3 +9,4 @@ shopt -s autocd
 . "$HOME/.bash/git-completion.bash"
 . "$HOME/.bash/titlebar.bash"
 
+eval "$(direnv hook bash)"
