@@ -25,7 +25,7 @@ call vundle#begin() " Add plugins below this line.
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'sjl/badwolf'
-
+Plugin 'tpope/vim-surround'
 
 call vundle#end()   " Add plugins above this line.
 
