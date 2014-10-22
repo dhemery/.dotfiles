@@ -103,6 +103,8 @@ set shiftwidth=4    " # columns to indent with >> and <<
 set softtabstop=-1  " Insert mode inserts 'shiftwidth' spaces
 set autoindent      " Copy the indentation of the previous line
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
+
 "---------------------------------------------------------------
 " Motion
 "---------------------------------------------------------------

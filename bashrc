@@ -1,3 +1,5 @@
+export SHELL=`which bash`
+
 set -o vi
 shopt -s autocd
 
