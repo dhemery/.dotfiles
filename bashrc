@@ -7,8 +7,8 @@ shopt -s autocd
 
 . "$HOME/.dale/local.bash"
 
-. "$HOME/.bash/prompt.bash"
-. "$HOME/.bash/git-completion.bash"
 . "$HOME/.bash/titlebar.bash"
+. "/usr/local/etc/bash_completion.d/git-completion.bash"
+. "$HOME/.bash/prompt.bash"
 
 eval "$(direnv hook bash)"
