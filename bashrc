@@ -1,16 +1,18 @@
-export SHELL=`which bash`
-EXTRAS="/usr/local"
-BASH_COMPLETION="$EXTRAS/etc/bash_completion.d"
-GIT_COMPLETION="$BASH_COMPLETION/git-completion.bash"
+export SHELL=$(which bash)
+
+function_exists() {
+    declare -f -F $1 > /dev/null
+    return $?
+}
 
 set -o vi
 shopt -s autocd
 
-. "$HOME/.bash/aliases.bash"
+. "$HOME/.bash/git.bash"
+. "$HOME/.bash/functions.bash"
 . "$HOME/.dale/local.bash"
-. "$HOME/.bash/titlebar.bash"
+
 . "$HOME/.bash/prompt.bash"
-
-[[ -s $GIT_COMPLETION ]] && . $GIT_COMPLETION
-
+. "$HOME/.bash/titlebar.bash"
 eval "$(direnv hook bash)"
+

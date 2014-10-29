@@ -42,5 +42,5 @@ function directory_to_titlebar {
 }
 
 if [[ "$TERM" == "xterm" || "$TERM" == "xterm-color" || "$TERM" == "xterm-256color" ]] ; then
- export PROMPT_COMMAND="directory_to_titlebar"
+ export PROMPT_COMMAND="directory_to_titlebar; $PROMPT_COMMAND"
 fi
