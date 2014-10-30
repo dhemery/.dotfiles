@@ -21,8 +21,10 @@ then
     . $GIT_COMPLETION
 
     for al in $(__git_aliases); do
+        # Make a shorthand version of each alias
         alias g$al="git $al"
 
+        # Complete the alias as if it were the original command
         complete_func=_git_$(__git_aliased_command $al)
         [[ -n $(declare -F $complete_fnc) ]] && __git_complete g$al $complete_func
     done

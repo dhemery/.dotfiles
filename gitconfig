@@ -11,6 +11,8 @@
     f = fetch
     g = grep
     l = log
+    # list aliases
+    la = "!git config -l | grep alias | cut -c 7-"
     m = merge
     mt = mergetool
     n = clean
@@ -21,10 +23,10 @@
     ps = push
     r = rebase
     s = status
-    sf = svn fetch
-    sr = svn rebase
     su = submodule update --init
-    la = "!git config -l | grep alias | cut -c 7-"
+    v = svn
+    vf = svn fetch
+    vr = svn rebase
 
 [credential]
    helper = osxkeychain
