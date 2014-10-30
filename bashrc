@@ -54,20 +54,16 @@ fi
 
 set_titlebar() {
     title=()
+    dir=${PWD##*/}
     gitdir="$(__gitdir)"
-    if [[ -n $gitdir ]] 
+    if [[ -n $gitdir && $gitdir != '.git' ]] 
     then
-        if [[ $gitdir == '.git' ]]
-        then
-            projectdir="${PWD}"
-        else
-            projectdir="$(dirname $gitdir)"
-        fi
+        projectdir="$(dirname $gitdir)"
         projectname="${projectdir##*/}"
-        title+="$projectname+"
+        title+="[$projectname] "
     fi
+    title+=${PWD##*/}
 
-    [[ $gitdir == '.git' ]] || title+="${PWD##*/}"
     printf "\033]0;%s\007" "$title"
 }
 
