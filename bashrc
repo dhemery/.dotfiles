@@ -16,6 +16,23 @@ BASH_COMPLETION="/usr/local/etc/bash_completion.d"
 GIT_PROMPT="$BASH_COMPLETION/git-prompt.sh"
 GIT_COMPLETION="$BASH_COMPLETION/git-completion.bash"
 
+if [[ -s $GIT_COMPLETION ]]
+then
+    . $GIT_COMPLETION
+
+    for al in $(__git_aliases); do
+        alias g$al="git $al"
+
+        complete_func=_git_$(__git_aliased_command $al)
+        [[ -n $(declare -F $complete_fnc) ]] && __git_complete g$al $complete_func
+    done
+fi
+
+BLUE="\[\e[34m\]"
+BLACK="\[\e[0m\]"
+PS1_DIR="$BLUE\W$BLACK"
+PS1_PROMPT_MARKER="$BLUE\$$BLACK"
+
 if [[ -s $GIT_PROMPT ]]
 then
     # Show * if unstanged changes, + if staged
@@ -30,37 +47,13 @@ then
     GIT_PS1_SHOWCOLORHINTS=true
 
     . $GIT_PROMPT
-fi
-
-if [[ -s $GIT_COMPLETION ]]
-then
-    . $GIT_COMPLETION
-
-    for al in `__git_aliases`; do
-        alias g$al="git $al"
-
-        complete_func=_git_$(__git_aliased_command $al)
-        function_exists $complete_fnc && __git_complete g$al $complete_func
-    done
-fi
-
-BLUE="\[\e[34m\]"
-BLACK="\[\e[0m\]"
-
-PS1_DIR="$BLUE\W$BLACK"
-PS1_PROMPT_MARKER="$BLUE\$$BLACK"
-
-if [[ -n $(declare -F __git_ps1) ]]
-then
-    echo "Found it"
     export PROMPT_COMMAND='__git_ps1 "$PS1_DIR" " $PS1_PROMPT_MARKER " " [%s]"'
 else
-    echo "doodnt' found it"
     export PS1="$PS1_DIR $PS1_PROMPT_MARKER "
 fi
 
 . "$HOME/.bash/titlebar.bash"
-
+export PROMPT_COMMAND="directory_to_titlebar; $PROMPT_COMMAND"
 eval "$(direnv hook bash)"
 
 jdk 7

@@ -41,6 +41,3 @@ function directory_to_titlebar {
    printf "\033]0;%s\007" "$dir"
 }
 
-if [[ "$TERM" == "xterm" || "$TERM" == "xterm-color" || "$TERM" == "xterm-256color" ]] ; then
- export PROMPT_COMMAND="directory_to_titlebar; $PROMPT_COMMAND"
-fi
