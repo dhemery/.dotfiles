@@ -56,10 +56,10 @@ fi
 
 set_titlebar() {
     title=()
-    dir=${PWD##*/}
     gitdir="$(__gitdir)"
-    if [[ -n $gitdir && $gitdir != '.git' ]] 
+    if [[ -n $gitdir ]]
     then
+        # If in a git repo, start the title with [project name].
         projectdir="$(dirname $gitdir)"
         projectname="${projectdir##*/}"
         title+="[$projectname] "
