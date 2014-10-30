@@ -52,8 +52,26 @@ else
     export PS1="$PS1_DIR $PS1_PROMPT_MARKER "
 fi
 
-. "$HOME/.bash/titlebar.bash"
-export PROMPT_COMMAND="directory_to_titlebar; $PROMPT_COMMAND"
+set_titlebar() {
+    title=()
+    gitdir="$(__gitdir)"
+    if [[ -n $gitdir ]] 
+    then
+        if [[ $gitdir == '.git' ]]
+        then
+            projectdir="${PWD}"
+        else
+            projectdir="$(dirname $gitdir)"
+        fi
+        projectname="${projectdir##*/}"
+        title+="$projectname+"
+    fi
+
+    [[ $gitdir == '.git' ]] || title+="${PWD##*/}"
+    printf "\033]0;%s\007" "$title"
+}
+
+export PROMPT_COMMAND="set_titlebar; $PROMPT_COMMAND"
 eval "$(direnv hook bash)"
 
 jdk 7
