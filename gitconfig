@@ -10,11 +10,13 @@
     dt = difftool
     f = fetch
     g = grep
+    hc = "!f() { git clone https://github.com/$1/$2.git ; }; f"
     l = log
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
     m = merge
     mt = mergetool
+    my = "!f() { git hc dhemery $1 ; }; f"
     n = clean
     o = checkout
     ob = checkout -b
