@@ -2,16 +2,6 @@ set -o vi
 shopt -s autocd
 export SHELL=$(which bash)
 
-function_exists() {
-    declare -f -F $1 > /dev/null
-    return $?
-}
-
-envs() { env | sort; }
-la() { ls -GFlas "$@" ; }
-path() { echo -e ${PATH//:/\\n}; }
-jdk () { export JAVA_HOME=$(/usr/libexec/java_home -v 1."$@") ; }
-
 BASH_COMPLETION="/usr/local/etc/bash_completion.d"
 GIT_PROMPT="$BASH_COMPLETION/git-prompt.sh"
 GIT_COMPLETION="$BASH_COMPLETION/git-completion.bash"
@@ -72,7 +62,15 @@ set_titlebar() {
 export PROMPT_COMMAND="set_titlebar; $PROMPT_COMMAND"
 eval "$(direnv hook bash)"
 
-jdk 7
-
 . "$HOME/.dale/local.bash"
+
+JAVA_HOME_COMMAND='/usr/libexec/java_home'
+DEFAULT_JDK=${DEFAULT_JDK:=7}
+
+[[ -x ${JAVA_HOME_COMMAND} ]] && jdk () { export JAVA_HOME=$(${JAVA_HOME_COMMAND} -v 1."$@") ; }
+[[ -n $(declare -F jdk) ]] && jdk ${DEFAULT_JDK}
+
+envs() { env | sort; }
+la() { ls -GFlas "$@" ; }
+path() { echo -e ${PATH//:/\\n}; }
 
