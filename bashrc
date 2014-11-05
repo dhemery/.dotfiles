@@ -45,18 +45,18 @@ else
 fi
 
 set_titlebar() {
+    gitdir="$(git rev-parse --git-dir 2>/dev/null)"
+    # If there's a gitdir and it is relative, make it absolute
+    [[ -z ${gitdir-} ]] || [[ $gitdir = /* ]] || gitdir="$PWD/${gitdir#./}"
+    # If there's a gitdir, projectdir is its parent
+    projectdir=''
+    [[ -n ${gitdir-} ]] && projectdir="${gitdir%/*}"
     title=()
-    gitdir="$(__gitdir)"
-    if [[ -n $gitdir ]]
-    then
-        # If in a git repo, start the title with [project name].
-        projectdir="$(dirname $gitdir)"
-        projectname="${projectdir##*/}"
-        title+="[$projectname] "
-    fi
-    title+=${PWD##*/}
-
-    printf "\033]0;%s\007" "$title"
+    # If there's a projectdir, put it into the title in brackets
+    [[ -n ${projectdir-} ]] && title+=("[${projectdir##*/}]")
+    # If current dir is not in projecdir, append current dir to the title
+    [[ ${PWD} = ${projectdir} ]] || title+=("${PWD##*/}")
+    printf "\033]0;%s\007" "${title[*]}"
 }
 
 export PROMPT_COMMAND="set_titlebar; $PROMPT_COMMAND"
