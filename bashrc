@@ -65,7 +65,7 @@ eval "$(direnv hook bash)"
 . "$HOME/.dale/local.bash"
 
 JAVA_HOME_COMMAND='/usr/libexec/java_home'
-DEFAULT_JDK=${DEFAULT_JDK:=7}
+DEFAULT_JDK=${DEFAULT_JDK:=8}
 
 [[ -x ${JAVA_HOME_COMMAND} ]] && jdk () { export JAVA_HOME=$(${JAVA_HOME_COMMAND} -v 1."$@") ; }
 [[ -n $(declare -F jdk) ]] && jdk ${DEFAULT_JDK}
