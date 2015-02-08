@@ -62,7 +62,8 @@ set_titlebar() {
 export PROMPT_COMMAND="set_titlebar; $PROMPT_COMMAND"
 eval "$(direnv hook bash)"
 
-. "$HOME/.dale/local.bash"
+LOCAL_BASH_CONFIG="$HOME/.dale/local.bash"
+[[ -f $LOCAL_BASH_CONFIG ]] && . $LOCAL_BASH_CONFIG
 
 JAVA_HOME_COMMAND='/usr/libexec/java_home'
 DEFAULT_JDK=${DEFAULT_JDK:=8}
