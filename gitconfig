@@ -21,9 +21,7 @@
     n = clean
     o = checkout
     ob = checkout -b
-    pl = pull
     pr = pull --rebase
-    ps = push
     r = rebase
     s = status
     su = submodule update --init
