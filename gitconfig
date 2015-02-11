@@ -21,6 +21,8 @@
     n = clean
     o = checkout
     ob = checkout -b
+    pl = pull
+    ps = push
     pr = pull --rebase
     r = rebase
     s = status
