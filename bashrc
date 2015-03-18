@@ -1,12 +1,22 @@
 set -o vi
 shopt -s autocd
-export SHELL=$(which bash)
 
-BASH_COMPLETION="/usr/local/etc/bash_completion.d"
-GIT_PROMPT="$BASH_COMPLETION/git-prompt.sh"
-GIT_COMPLETION="$BASH_COMPLETION/git-completion.bash"
+command -v brew && BREW_HOME="$(brew --prefix)"
+[[ -d $BREW_HOME ]] && BASH_COMPLETION="$BREW_HOME/etc/bash_completion"
 
-if [[ -s $GIT_COMPLETION ]]
+if [[ -f $BASH_COMPLETION ]]
+then
+    . $BASH_COMPLETION
+    BASH_COMPLETIONS="$BASH_COMPLETION.d"
+fi
+
+if [[ -d $BASH_COMPLETIONS ]]
+then
+    GIT_COMPLETION="$BASH_COMPLETIONS/git-completion.bash"
+    GIT_PROMPT="$BASH_COMPLETIONS/git-prompt.sh"
+fi
+
+if [[ -f $GIT_COMPLETION ]]
 then
     . $GIT_COMPLETION
 
@@ -25,7 +35,7 @@ BLACK="\[\e[0m\]"
 PS1_DIR="$BLUE\W$BLACK"
 PS1_PROMPT_MARKER="$BLUE\$$BLACK"
 
-if [[ -s $GIT_PROMPT ]]
+if [[ -f $GIT_PROMPT ]]
 then
     # Show * if unstanged changes, + if staged
     GIT_PS1_SHOWDIRTYSTATE=1
