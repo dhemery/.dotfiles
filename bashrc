@@ -1,7 +1,7 @@
 set -o vi
 shopt -s autocd
 
-command -v brew && BREW_HOME="$(brew --prefix)"
+command -v brew &> /dev/null && BREW_HOME="$(brew --prefix)"
 [[ -d $BREW_HOME ]] && BASH_COMPLETION="$BREW_HOME/etc/bash_completion"
 
 if [[ -f $BASH_COMPLETION ]]
