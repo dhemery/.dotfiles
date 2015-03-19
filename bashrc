@@ -1,6 +1,9 @@
 set -o vi
 shopt -s autocd
 
+export PATH=${PATH}:.
+export EDITOR='vim'
+
 command -v brew &> /dev/null && BREW_HOME="$(brew --prefix)"
 [[ -d $BREW_HOME ]] && BASH_COMPLETION="$BREW_HOME/etc/bash_completion"
 
