@@ -42,7 +42,6 @@
     status = auto
 
 [core]
-    excludesfile = /Users/Dale/.gitignore_global
     autocrlf = input
 
 [diff]

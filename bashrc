@@ -88,3 +88,4 @@ envs() { env | sort; }
 la() { ls -GFlas "$@" ; }
 path() { echo -e ${PATH//:/\\n}; }
 
+export XDG_CONFIG_HOME="$HOME/.config"
