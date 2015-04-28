@@ -2,6 +2,7 @@
     a = add
     aa = add -A
     b = branch
+    ba = branch -avv
     c = commit
     cat = cat-file -p
     d = diff
