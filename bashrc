@@ -78,12 +78,6 @@ eval "$(direnv hook bash)"
 LOCAL_BASH_CONFIG="$HOME/.dale/local.bash"
 [[ -f $LOCAL_BASH_CONFIG ]] && . $LOCAL_BASH_CONFIG
 
-JAVA_HOME_COMMAND='/usr/libexec/java_home'
-DEFAULT_JDK=${DEFAULT_JDK:=8}
-
-[[ -x ${JAVA_HOME_COMMAND} ]] && jdk () { export JAVA_HOME=$(${JAVA_HOME_COMMAND} -v 1."$@") ; }
-[[ -n $(declare -F jdk) ]] && jdk ${DEFAULT_JDK}
-
 envs() { env | sort; }
 la() { ls -GFlas "$@" ; }
 path() { echo -e ${PATH//:/\\n}; }

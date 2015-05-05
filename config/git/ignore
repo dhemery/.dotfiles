@@ -40,6 +40,7 @@ local.properties
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
 
 *.iml
+*.eml
 
 ## Directory-based project format:
 .idea/
