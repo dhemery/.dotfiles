@@ -4,20 +4,23 @@ shopt -s autocd
 export PATH=${PATH}:.
 export EDITOR='vim'
 
+BASH_COMPLETION=/etc/share/bash-completion/bash_completion
+BASH_COMPLETIONS="$BASH_COMPLETION/completions"
+
 command -v brew &> /dev/null && BREW_HOME="$(brew --prefix)"
-[[ -d $BREW_HOME ]] && BASH_COMPLETION="$BREW_HOME/etc/bash_completion"
+[[ -d $BREW_HOME ]] && BASH_COMPLETION="$BREW_HOME/etc/bash_completion" && BASH_COMPLETIONS="$BASH_COMPLETION.d"
 
 if [[ -f $BASH_COMPLETION ]]
 then
     . $BASH_COMPLETION
-    BASH_COMPLETIONS="$BASH_COMPLETION.d"
 fi
 
 if [[ -d $BASH_COMPLETIONS ]]
 then
     GIT_COMPLETION="$BASH_COMPLETIONS/git-completion.bash"
-    GIT_PROMPT="$BASH_COMPLETIONS/git-prompt.sh"
 fi
+
+GIT_PROMPT="$HOME/.git-prompt.sh"
 
 if [[ -f $GIT_COMPLETION ]]
 then
