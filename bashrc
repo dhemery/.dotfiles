@@ -4,26 +4,43 @@ shopt -s autocd
 export PATH=${PATH}:.
 export EDITOR='vim'
 
-BASH_COMPLETION=/etc/share/bash-completion/bash_completion
-BASH_COMPLETIONS="$BASH_COMPLETION/completions"
+OS_NAME="$(uname)"
+echo "OS: $OS_NAME"
 
-command -v brew &> /dev/null && BREW_HOME="$(brew --prefix)"
-[[ -d $BREW_HOME ]] && BASH_COMPLETION="$BREW_HOME/etc/bash_completion" && BASH_COMPLETIONS="$BASH_COMPLETION.d"
+if [[ $OS_NAME = "Linux" ]]
+then
+    BASH_COMPLETION_HOME=/usr/share/bash-completion
+    BASH_COMPLETIONS="$BASH_COMPLETION_HOME/completions"
+fi
 
+if [[ $OS_NAME = "Darwin" ]]
+then
+    BASH_COMPLETION_HOME=/usr/local/etc
+    BASH_COMPLETIONS="$BASH_COMPLETION_HOME/bash_completion.d"
+fi
+
+BASH_COMPLETION_SCRIPT="$BASH_COMPLETION_HOME/bash_completion"
+
+echo "Bash completion: $BASH_COMPLETION"
 if [[ -f $BASH_COMPLETION ]]
 then
+    echo "Found bash completion"
     . $BASH_COMPLETION
 fi
 
+echo "Bash completions: $BASH_COMPLETIONS"
 if [[ -d $BASH_COMPLETIONS ]]
 then
+    echo "Found bash completions"
     GIT_COMPLETION="$BASH_COMPLETIONS/git-completion.bash"
 fi
 
 GIT_PROMPT="$HOME/.git-prompt.sh"
 
+echo "Git completion: $GIT_COMPLETION"
 if [[ -f $GIT_COMPLETION ]]
 then
+    echo "Found git completion"
     . $GIT_COMPLETION
 
     for al in $(__git_aliases); do
