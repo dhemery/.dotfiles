@@ -5,7 +5,6 @@ export PATH=${PATH}:.
 export EDITOR='vim'
 
 OS_NAME="$(uname)"
-echo "OS: $OS_NAME"
 
 if [[ $OS_NAME = "Linux" ]]
 then
@@ -21,26 +20,20 @@ fi
 
 BASH_COMPLETION_SCRIPT="$BASH_COMPLETION_HOME/bash_completion"
 
-echo "Bash completion: $BASH_COMPLETION"
 if [[ -f $BASH_COMPLETION ]]
 then
-    echo "Found bash completion"
     . $BASH_COMPLETION
 fi
 
-echo "Bash completions: $BASH_COMPLETIONS"
 if [[ -d $BASH_COMPLETIONS ]]
 then
-    echo "Found bash completions"
     GIT_COMPLETION="$BASH_COMPLETIONS/git-completion.bash"
 fi
 
 GIT_PROMPT="$HOME/.git-prompt.sh"
 
-echo "Git completion: $GIT_COMPLETION"
 if [[ -f $GIT_COMPLETION ]]
 then
-    echo "Found git completion"
     . $GIT_COMPLETION
 
     for al in $(__git_aliases); do
