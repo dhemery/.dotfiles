@@ -164,3 +164,12 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
+
+**/*.scriv/Files/binder.autosave
+**/*.scriv/Files/binder.backup
+**/*.scriv/Files/search.indexes
+**/*.scriv/Files/user.lock
+**/*.scriv/Files/Docs/docs.checksum
+**/*.scriv/QuickLook/
+**/*.scriv/Settings/ui.plist
+
