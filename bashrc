@@ -20,21 +20,19 @@ fi
 
 BASH_COMPLETION_SCRIPT="$BASH_COMPLETION_HOME/bash_completion"
 
-if [[ -f $BASH_COMPLETION ]]
+if [[ -f $BASH_COMPLETION_SCRIPT ]]
 then
-    . $BASH_COMPLETION
+    . $BASH_COMPLETION_SCRIPT
 fi
 
 if [[ -d $BASH_COMPLETIONS ]]
 then
-    GIT_COMPLETION="$BASH_COMPLETIONS/git-completion.bash"
+    GIT_COMPLETION_SCRIPT="$BASH_COMPLETIONS/git-completion.bash"
 fi
 
-GIT_PROMPT="$HOME/.git-prompt.sh"
-
-if [[ -f $GIT_COMPLETION ]]
+if [[ -f $GIT_COMPLETION_SCRIPT ]]
 then
-    . $GIT_COMPLETION
+    . $GIT_COMPLETION_SCRIPT
 
     for al in $(__git_aliases); do
         # Make a shorthand version of each alias
@@ -51,7 +49,9 @@ BLACK="\[\e[0m\]"
 PS1_DIR="$BLUE\W$BLACK"
 PS1_PROMPT_MARKER="$BLUE\$$BLACK"
 
-if [[ -f $GIT_PROMPT ]]
+GIT_PROMPT_SCRIPT="$BASH_COMPLETIONS/git-prompt.sh"
+
+if [[ -f $GIT_PROMPT_SCRIPT ]]
 then
     # Show * if unstanged changes, + if staged
     GIT_PS1_SHOWDIRTYSTATE=1
@@ -64,7 +64,7 @@ then
     # Status color reflects status
     GIT_PS1_SHOWCOLORHINTS=true
 
-    . $GIT_PROMPT
+    . $GIT_PROMPT_SCRIPT
     export PROMPT_COMMAND='__git_ps1 "$PS1_DIR" " $PS1_PROMPT_MARKER " " [%s]"'
 else
     export PS1="$PS1_DIR $PS1_PROMPT_MARKER "
