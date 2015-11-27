@@ -11,14 +11,14 @@
     dt = difftool
     f = fetch
     g = grep
-    hc = "!f() { git clone https://github.com/$1/$2.git ; }; f"
+    hc = "!f() { git clone https://github.com/$1/$2.git "${@:3}"; }; f"
     l = log
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
     m = merge
     ms = merge --squash
     mt = mergetool
-    my = "!f() { git hc dhemery $1 ; }; f"
+    my = "!f() { git hc dhemery "$@" ; }; f"
     n = clean
     o = checkout
     ob = checkout -b
@@ -56,7 +56,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 
 [format]
     pretty = oneline
@@ -88,4 +88,4 @@
 [user]
     name = Dale Emery
     email = dale@dhemery.com
-path = 
+path =
