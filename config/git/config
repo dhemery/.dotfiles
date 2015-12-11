@@ -13,6 +13,7 @@
     g = grep
     hc = "!f() { git clone https://github.com/$1/$2.git "${@:3}"; }; f"
     l = log
+    lb = log --decorate
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
     m = merge
