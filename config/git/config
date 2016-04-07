@@ -45,7 +45,6 @@
 
 [core]
     autocrlf = input
-	excludesfile = /Users/Dale/.gitignore_global
 
 [diff]
     tool = opendiff
