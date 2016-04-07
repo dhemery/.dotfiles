@@ -45,6 +45,7 @@
 
 [core]
     autocrlf = input
+	excludesfile = /Users/Dale/.gitignore_global
 
 [diff]
     tool = opendiff
@@ -57,7 +58,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 
 [format]
     pretty = oneline

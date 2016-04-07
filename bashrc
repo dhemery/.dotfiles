@@ -1,7 +1,7 @@
 set -o vi
 shopt -s autocd
 
-export PATH=${PATH}:.
+export PATH=${PATH}:.:${HOME}/.bin
 export EDITOR='vim'
 
 OS_NAME="$(uname)"
