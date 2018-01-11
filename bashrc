@@ -91,6 +91,7 @@ eval "$(direnv hook bash)"
 LOCAL_BASH_CONFIG="$HOME/.dale/local.bash"
 [[ -f $LOCAL_BASH_CONFIG ]] && . $LOCAL_BASH_CONFIG
 
+gw() { gradlew "$@"; }
 envs() { env | sort; }
 la() { ls -GFlas "$@" ; }
 path() { echo -e ${PATH//:/\\n}; }
