@@ -1,6 +1,2 @@
-/build-scan-data/
-/caches/
-/daemon/
-/native/
-/workers/
-/wrapper/
+*
+!gradle.properties
