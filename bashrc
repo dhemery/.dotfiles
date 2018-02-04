@@ -99,3 +99,6 @@ path() { echo -e ${PATH//:/\\n}; }
 complete -F _gradle -d gw
 
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# added by travis gem
+[ -f /Users/Dale/.travis/travis.sh ] && source /Users/Dale/.travis/travis.sh
