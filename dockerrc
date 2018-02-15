@@ -1,0 +1,9 @@
+dc() { docker container "$@"; }
+dcls() { dc list "$@"; }
+dcla() { dcls -a  "$@"; }
+di() { docker image "$@"; }
+dils() { di list "$@"; }
+dila() { dils -a "$@"; }
+dps() { docker ps "$@"; }
+dpsa() { dps -a "$@"; }
+dr() { docker run "$@"; }

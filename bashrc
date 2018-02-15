@@ -102,3 +102,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # added by travis gem
 [ -f /Users/Dale/.travis/travis.sh ] && source /Users/Dale/.travis/travis.sh
+
+. .dockerrc
