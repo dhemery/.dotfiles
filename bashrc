@@ -44,48 +44,10 @@ then
     done
 fi
 
-BLUE="\[\e[34m\]"
-BLACK="\[\e[0m\]"
-PS1_DIR="$BLUE\W$BLACK"
-PS1_PROMPT_MARKER="$BLUE\$$BLACK"
-
-GIT_PROMPT_SCRIPT="$BASH_COMPLETIONS/git-prompt.sh"
-
-if [[ -f $GIT_PROMPT_SCRIPT ]]
-then
-    # Show * if unstanged changes, + if staged
-    GIT_PS1_SHOWDIRTYSTATE=1
-    # Show $ if stash
-    GIT_PS1_SHOWSTASHSTATE=1
-    # Show % if untracked files
-    GIT_PS1_SHOWUNTRACKEDFILES=1
-    # Show < if behind upstream, > if ahead, <> if diverged
-    GIT_PS1_SHOWUPSTREAM='auto verbose'
-    # Status color reflects status
-    GIT_PS1_SHOWCOLORHINTS=true
-
-    . $GIT_PROMPT_SCRIPT
-    export PROMPT_COMMAND='__git_ps1 "$PS1_DIR" " $PS1_PROMPT_MARKER " " [%s]"'
-else
-    export PS1="$PS1_DIR $PS1_PROMPT_MARKER "
+if [ -f /usr/local/share/liquidprompt ]; then
+    . /usr/local/share/liquidprompt
 fi
 
-set_titlebar() {
-    gitdir="$(git rev-parse --git-dir 2>/dev/null)"
-    # If there's a gitdir and it is relative, make it absolute
-    [[ -z ${gitdir-} ]] || [[ $gitdir = /* ]] || gitdir="$PWD/${gitdir#./}"
-    # If there's a gitdir, projectdir is its parent
-    projectdir=''
-    [[ -n ${gitdir-} ]] && projectdir="${gitdir%/*}"
-    title=()
-    # If there's a projectdir, put it into the title in brackets
-    [[ -n ${projectdir-} ]] && title+=("[${projectdir##*/}]")
-    # If current dir is not in projecdir, append current dir to the title
-    [[ ${PWD} = ${projectdir} ]] || title+=("${PWD##*/}")
-    printf "\033]0;%s\007" "${title[*]}"
-}
-
-export PROMPT_COMMAND="set_titlebar; $PROMPT_COMMAND"
 eval "$(direnv hook bash)"
 
 LOCAL_BASH_CONFIG="$HOME/.dale/local.bash"
