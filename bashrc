@@ -48,7 +48,12 @@ if [ -f /usr/local/share/liquidprompt ]; then
     . /usr/local/share/liquidprompt
 fi
 
-eval "$(direnv hook bash)"
+# Replace liquidprompt's _lp_title(), which prepends an unwanted newline if
+# LP_ENABLE_TITLE is on.
+_lp_title()
+{
+    echo -nE "${_LP_OPEN_ESC}${LP_TITLE_OPEN}$(_lp_as_text "$1")${LP_TITLE_CLOSE}${_LP_CLOSE_ESC}"
+}
 
 LOCAL_BASH_CONFIG="$HOME/.dale/local.bash"
 [[ -f $LOCAL_BASH_CONFIG ]] && . $LOCAL_BASH_CONFIG
@@ -66,3 +71,5 @@ export XDG_CONFIG_HOME="$HOME/.config"
 [ -f /Users/Dale/.travis/travis.sh ] && source /Users/Dale/.travis/travis.sh
 
 . ~/.dockerrc
+
+eval "$(direnv hook bash)"
