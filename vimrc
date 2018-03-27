@@ -24,7 +24,6 @@ call vundle#begin() " Add plugins below this line.
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'sjl/badwolf'
 Plugin 'tpope/vim-surround'
 
 call vundle#end()   " Add plugins above this line.
@@ -48,7 +47,7 @@ set wildmode=full   " Launch completion if multiple matches.
 " Key mapping
 "--------------------------------------------------------------
 
-let mapleader = "," " Use comma as leader
+" let mapleader = "," " Use comma as leader
 
 "---------------------------------------------------------------
 " Display
@@ -116,8 +115,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 "---------------------------------------------------------------
 
 " j/k move one display line instead of one logical line.
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 " Kill the arrow keys
 nnoremap <Up> <nop>
