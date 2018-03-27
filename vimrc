@@ -47,7 +47,7 @@ set wildmode=full   " Launch completion if multiple matches.
 " Key mapping
 "--------------------------------------------------------------
 
-" let mapleader = "," " Use comma as leader
+let mapleader=' ' " Use space as leader
 
 "---------------------------------------------------------------
 " Display
