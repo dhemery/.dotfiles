@@ -55,6 +55,7 @@ let mapleader=' ' " Use space as leader
 
 set title           " Set the terminal window's title
 set number          " Display line numbers
+set relativenumber
 set laststatus=2    " Always display the status line
 set showcmd         " Show partial commands in status
 set ruler           " Display cursor position in status
@@ -62,7 +63,7 @@ set cmdheight=2     " Set the command window to 2 lines, to
                     " avoid having to press <enter> to continue
 set visualbell      " Visual bell instead of beeping ...
 set t_vb=           " ... and turn off the bell altogether
-set cursorline      " Highlight the line the cursor is on
+" set cursorline      " Highlight the line the cursor is on
 set linebreak       " Wrap lines at more reasonable places.
 
 " Consider tabs, trailing space, eol as invisible characters
