@@ -115,18 +115,21 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
 " Motion
 "---------------------------------------------------------------
 
-" j/k move one display line instead of one logical line.
-" nnoremap j gj
-" nnoremap k gk
-
 " Kill the arrow keys
 nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
 
-" Navigate to neighboring windows.
-nnoremap <leader>h <c-w>h
-nnoremap <leader>j <c-w>j
-nnoremap <leader>k <c-w>k
-nnoremap <leader>l <c-w>l
+"---------------------------------------------------------------
+" Windows and Tabs
+"---------------------------------------------------------------
+nnoremap <leader>w <C-w>
+augroup ShowActiveWindow
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    autocmd VimEnter,WinEnter,BufWinEnter * setlocal relativenumber
+    autocmd WinLeave * setlocal nocursorline
+    autocmd WinLeave * setlocal norelativenumber
+augroup END
+
