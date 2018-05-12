@@ -44,20 +44,6 @@
 
 [core]
     autocrlf = input
-	excludesfile = /Users/demery/.gitignore_global
-
-[diff]
-    tool = opendiff
-
-[difftool]
-    prompt = false
-
-[difftool "opendiff"]
-    cmd = opendiff "$LOCAL" "$REMOTE"
-
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
 
 [format]
     pretty = oneline
@@ -65,21 +51,6 @@
 [include]
     path = .dale/gitconfig
 
-[merge]
-    tool = opendiff
-    conflictstyle = diff3
-
-[mergetool]
-    prompt = false
-    keepBackup = true
-
-[mergetool "opendiff"]
-    cmd = opendiff "$LOCAL" "$REMOTE" -merge "$MERGED" -ancestor "$BASE"
-    trustExitCode = true
-
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [push]
     default = current
 
@@ -89,9 +60,3 @@
 [user]
 	name = Dale Emery
 	email = dale@dhemery.com
-path =
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f

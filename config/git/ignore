@@ -1,4 +1,4 @@
-# ==> OSX.gitignore <==
+# OSX.gitignore
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -21,7 +21,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# ==> Vim.gitignore <==
+# Vim.gitignore
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 *.un~
@@ -29,6 +29,7 @@ Session.vim
 .netrwhist
 *~
 
+# Scrivener package files
 **/*.scriv/Files/binder.autosave
 **/*.scriv/Files/binder.backup
 **/*.scriv/Files/search.indexes
