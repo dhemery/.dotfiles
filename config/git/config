@@ -1,61 +1,62 @@
+# vim: filetype=gitconfig
 [alias]
-    a = add
-    aa = add -A
-    b = branch
-    ba = branch -avv
-    c = commit
-    cat = cat-file -p
-    d = diff
-    dc = diff --cached
-    dp = diff --no-prefix
-    dt = difftool
-    f = fetch
-    g = grep
-    hc = "!f() { git clone git@github.com:$1/$2.git "${@:3}"; }; f"
-    l = log --abbrev-commit --graph -20
-    # list aliases
-    la = "!git config -l | grep alias | cut -c 7-"
-    m = merge
-    ms = merge --squash
-    mt = mergetool
-    my = "!f() { git hc dhemery "$@" ; }; f"
-    n = clean
-    o = checkout
-    ob = checkout -b
-    pl = pull
-    ps = push
-    pr = pull --rebase
-    r = rebase
-    s = status
-    su = submodule update --init
-    v = svn
-    vc = svn dcommit
-    vf = svn fetch
-    vr = svn rebase
+	a = add
+	aa = add -A
+	b = branch
+	ba = branch -avv
+	c = commit
+	cat = cat-file -p
+	d = diff
+	dc = diff --cached
+	dp = diff --no-prefix
+	dt = difftool
+	f = fetch
+	g = grep
+	hc = "!f() { git clone git@github.com:$1/$2.git "${@:3}"; }; f"
+	l = log --abbrev-commit --graph -20
+	# list aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+	m = merge
+	ms = merge --squash
+	mt = mergetool
+	my = "!f() { git hc dhemery "$@" ; }; f"
+	n = clean
+	o = checkout
+	ob = checkout -b
+	pl = pull
+	ps = push
+	pr = pull --rebase
+	r = rebase
+	s = status
+	su = submodule update --init
+	v = svn
+	vc = svn dcommit
+	vf = svn fetch
+	vr = svn rebase
 
 [credential]
-   helper = osxkeychain
+	helper = osxkeychain
 
 [color]
-    branch = auto
-    diff = auto
-    grep = auto
-    status = auto
+	branch = auto
+	diff = auto
+	grep = auto
+	status = auto
 
 [core]
-    autocrlf = input
+	autocrlf = input
 
 [format]
-    pretty = oneline
+	pretty = oneline
 
 [include]
-    path = .dale/gitconfig
+	path = .dale/gitconfig
 
 [push]
-    default = current
+	default = current
 
 [rerere]
-    enabled = true
+	enabled = true
 
 [user]
 	name = Dale Emery
