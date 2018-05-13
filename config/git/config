@@ -1,4 +1,4 @@
-# vim: filetype=gitconfig
+# vim: ft=gitconfig
 [alias]
 	a = add
 	aa = add -A

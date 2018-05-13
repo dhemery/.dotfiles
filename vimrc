@@ -7,27 +7,6 @@ set hidden          " Abandoning a buffer (e.g. by opening
                     " another file) hides it instead of closing.
 set exrc            " Read any .vimrc file in the startup dir.
 
-"--------------------------------------------------------------
-" Plugins
-"--------------------------------------------------------------
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin() " Add plugins below this line.
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-surround'
-
-call vundle#end()   " Add plugins above this line.
-
 "---------------------------------------------------------------
 " Filetype
 "---------------------------------------------------------------
