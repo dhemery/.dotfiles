@@ -10,6 +10,7 @@
 	dp = diff --no-prefix
 	dt = difftool
 	f = fetch
+	fpr = "!f() { git fetch $1 pull/$2/head:pr/$2; }; f"
 	g = grep
 	hc = "!f() { git clone git@github.com:$1/$2.git "${@:3}"; }; f"
 	l = log --abbrev-commit --graph -20
@@ -46,10 +47,7 @@
 	autocrlf = input
 
 [diff]
-	tool = intellij
-
-[difftool "intellij"]
-	cmd = idea diff $LOCAL $REMOTE
+	tool = opendiff
 
 [format]
 	pretty = oneline
