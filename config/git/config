@@ -13,7 +13,9 @@
 	fpr = "!f() { git fetch $1 pull/$2/head:pr/$2; }; f"
 	g = grep
 	hc = "!f() { git clone git@github.com:$1/$2.git "${@:3}"; }; f"
-	l = log --abbrev-commit --graph -20
+	l = log
+	lc = log --abbrev-commit --graph -20
+	lf = log --graph --pretty=fuller
 	# list aliases
 	la = "!git config -l | grep alias | cut -c 7-"
 	m = merge
