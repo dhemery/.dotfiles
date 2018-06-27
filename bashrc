@@ -34,7 +34,7 @@ if [[ -f $GIT_COMPLETION_SCRIPT ]]
 then
     . $GIT_COMPLETION_SCRIPT
 
-    for al in $(__git_aliases); do
+    for al in $(git --list-cmds=alias); do
         # Make a shorthand version of each alias
         alias g$al="git $al"
 
