@@ -4,37 +4,19 @@ shopt -s autocd
 export PATH=${PATH}:.:${HOME}/.bin
 export EDITOR='vim'
 
-OS_NAME="$(uname)"
-
-if [[ $OS_NAME = "Linux" ]]
-then
-    BASH_COMPLETION_HOME=/usr/share/bash-completion
-    BASH_COMPLETIONS="$BASH_COMPLETION_HOME/completions"
-fi
-
-if [[ $OS_NAME = "Darwin" ]]
-then
-    BASH_COMPLETION_HOME=/usr/local/etc
-    BASH_COMPLETIONS="$BASH_COMPLETION_HOME/bash_completion.d"
-fi
-
-BASH_COMPLETION_SCRIPT="$BASH_COMPLETION_HOME/bash_completion"
+LOCAL_BASH_CONFIG="$HOME/.dale/local.bash"
+[[ -f $LOCAL_BASH_CONFIG ]] && . $LOCAL_BASH_CONFIG
 
 if [[ -f $BASH_COMPLETION_SCRIPT ]]
 then
     . $BASH_COMPLETION_SCRIPT
 fi
 
-if [[ -d $BASH_COMPLETIONS ]]
-then
-    GIT_COMPLETION_SCRIPT="$BASH_COMPLETIONS/git-completion.bash"
-fi
-
 if [[ -f $GIT_COMPLETION_SCRIPT ]]
 then
     . $GIT_COMPLETION_SCRIPT
 
-    for al in $(git --list-cmds=alias); do
+    for al in $(git_list_aliases); do
         # Make a shorthand version of each alias
         alias g$al="git $al"
 
@@ -44,8 +26,8 @@ then
     done
 fi
 
-if [ -f /usr/local/share/liquidprompt ]; then
-    . /usr/local/share/liquidprompt
+if [ -f $LIQUID_PROMPT_SCRIPT ]; then
+    . $LIQUID_PROMPT_SCRIPT
 fi
 
 # Replace liquidprompt's _lp_title(), which prepends an unwanted newline if
@@ -55,9 +37,6 @@ _lp_title()
     echo -nE "${_LP_OPEN_ESC}${LP_TITLE_OPEN}$(_lp_as_text "$1")${LP_TITLE_CLOSE}${_LP_CLOSE_ESC}"
 }
 
-LOCAL_BASH_CONFIG="$HOME/.dale/local.bash"
-[[ -f $LOCAL_BASH_CONFIG ]] && . $LOCAL_BASH_CONFIG
-
 envs() { env | sort; }
 gw() { gradlew "$@"; }
 la() { ls -GFlas "$@" ; }
@@ -66,10 +45,3 @@ path() { echo -e ${PATH//:/\\n}; }
 complete -F _gradle -d gw
 
 export XDG_CONFIG_HOME="$HOME/.config"
-
-# added by travis gem
-[ -f /Users/Dale/.travis/travis.sh ] && source /Users/Dale/.travis/travis.sh
-
-. ~/.dockerrc
-
-eval "$(direnv hook bash)"
