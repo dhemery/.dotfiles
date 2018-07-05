@@ -2,17 +2,16 @@
 ############################
 # .make.sh dir
 # This script creates symlinks from the current user's home directory to each
-# item in dir. It prepends a dot to each item's destination name.
+# item in this dir. It prepends a dot to each item's destination name.
 ############################
 
 rm -rf .backup
 mkdir .backup
 
 for path in *; do
-    file=`basename $path`
-    dest=~/.$file
-    source=`pwd`/$file
+    src=$(pwd)/$path
+    dest=~/.$(basename $src)
     mv $dest .backup
-    ln -s $source $dest
-    echo "Linked $dest to $source"
+    ln -s $src $dest
+    echo "Linked $dest to $src"
 done
