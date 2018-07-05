@@ -17,11 +17,13 @@ source_first() {
 source_first \
     "/usr/local/etc/bash_completion" \
     "/usr/share/bash-completion/bash_completion"
+
 # Git completion script
 source_first \
     "/usr/local/etc/bash_completion.d/git-completion.bash" \
     "/usr/share/bash-completions/completions/git" \
     "/etc/bash_completion.d/git"
+
 # Liquid prompt script (if this is an interactive shell)
 [[ $- = *i* ]] \
     && source_first \
@@ -37,7 +39,8 @@ _lp_title()
 
 # Try --list-cmds option from git 2.18
 git_aliases=$(git --list-cmds=alias 2>/dev/null)
-# If --list-cmds fails, try _git_aliases() from older git completion script
+# If --list-cmds fails, try _git_aliases(), which is defined in pre-2.18
+# versions of the git completion script)
 [[ $? = 0 ]] || git_aliases=$(__git_aliases 2>/dev/null)
 [[ $? = 0 ]] || echo "Could not list git aliases"
 
@@ -50,6 +53,7 @@ for al in $git_aliases; do
   [[ -n $(declare -F $complete_fnc) ]] && __git_complete g$al $complete_func
 done
 
+# TODO: Check for direnv before running this?
 eval "$(direnv hook bash)"
 
 envs() { env | sort; }
