@@ -54,9 +54,6 @@
 [rerere]
 	enabled = true
 
-[credential]
-	helper = osxkeychain
-
 [user]
 	name = Dale Emery
 	email = dale@dhemery.com
