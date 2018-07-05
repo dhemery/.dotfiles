@@ -14,11 +14,19 @@ source_first() {
 }
 
 # Bash completion script
-source_first "/usr/local/etc/bash_completion" "/usr/share/bash-completion/bash_completion"
+source_first \
+    "/usr/local/etc/bash_completion" \
+    "/usr/share/bash-completion/bash_completion"
 # Git completion script
-source_first "/usr/local/etc/bash_completion.d/git-completion.bash" "/usr/share/completions/git"
-# Liquid prompt script
-source_first "/usr/local/share/liquidprompt" "$HOME/.installed/liquidprompt/liquidprompt"
+source_first \
+    "/usr/local/etc/bash_completion.d/git-completion.bash" \
+    "/usr/share/bash-completions/completions/git" \
+    "/etc/bash_completion.d/git"
+# Liquid prompt script (if this is an interactive shell)
+[[ $- = *i* ]] \
+    && source_first \
+    "/usr/local/share/liquidprompt" \
+    "$HOME/.installed/liquidprompt/liquidprompt"
 
 # Replace liquidprompt's _lp_title(), which prepends an unwanted newline if
 # LP_ENABLE_TITLE is on.
