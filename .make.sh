@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ############################
-# .make.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# .make.sh dir
+# This script creates symlinks from the current user's home directory to each
+# item in dir. It prepends a dot to each item's destination name.
 ############################
 
 rm -rf .backup

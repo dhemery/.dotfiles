@@ -46,10 +46,17 @@
 	tool = opendiff
 
 [include]
-	path = ~/.dale/gitconfig
+	path = ~/.git_local
 
 [push]
 	default = current
 
 [rerere]
 	enabled = true
+
+[credential]
+	helper = osxkeychain
+
+[user]
+	name = Dale Emery
+	email = dale@dhemery.com
