@@ -21,7 +21,7 @@ source_first \
 # Git completion script
 source_first \
     "/usr/local/etc/bash_completion.d/git-completion.bash" \
-    "/usr/share/bash-completions/completions/git" \
+    "/usr/share/bash-completion/completions/git" \
     "/etc/bash_completion.d/git"
 
 # Liquid prompt script (if this is an interactive shell)
