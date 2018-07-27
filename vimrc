@@ -34,7 +34,6 @@ let mapleader=' ' " Use space as leader
 
 set title           " Set the terminal window's title
 set number          " Display line numbers
-set relativenumber
 set laststatus=2    " Always display the status line
 set showcmd         " Show partial commands in status
 set ruler           " Display cursor position in status
@@ -108,8 +107,6 @@ nnoremap <leader>w <C-w>
 augroup ShowActiveWindow
     autocmd!
     autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-    autocmd VimEnter,WinEnter,BufWinEnter * setlocal relativenumber
     autocmd WinLeave * setlocal nocursorline
-    autocmd WinLeave * setlocal norelativenumber
 augroup END
 
