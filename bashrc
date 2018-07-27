@@ -1,7 +1,7 @@
 set -o vi
 shopt -s autocd
 
-export CDPATH=:~:
+export CDPATH=.:~
 export EDITOR='vim'
 export PATH=${PATH}:.:${HOME}/.bin
 export XDG_CONFIG_HOME="$HOME/.config"
