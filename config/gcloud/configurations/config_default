@@ -1,0 +1,8 @@
+[core]
+account = demery@pivotal.io
+project = gemfire-dev
+
+[compute]
+zone = us-central1-f
+region = us-central1
+
