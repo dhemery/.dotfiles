@@ -43,6 +43,7 @@ set visualbell      " Visual bell instead of beeping ...
 set t_vb=           " ... and turn off the bell altogether
 " set cursorline      " Highlight the line the cursor is on
 set linebreak       " Wrap lines at more reasonable places.
+set scrolloff=3     " # Lines to retain when scrolling
 
 " Consider tabs, trailing space, eol as invisible characters
 set listchars=tab:>-,trail:·,eol:$
@@ -82,13 +83,16 @@ nnoremap <leader>/ :set hlsearch!<CR>
 " Formatting
 "---------------------------------------------------------------
 
+set tabstop=8       " # spaces a tab expands into
 set expandtab       " Insert mode expands tabs to spaces
-set shiftwidth=4    " # columns to indent with >> and <<
+set shiftwidth=2    " # columns to indent with >> and <<
 set softtabstop=-1  " Insert mode inserts 'shiftwidth' spaces
 set autoindent      " Copy the indentation of the previous line
 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=o formatoptions-=r
-autocmd Filetype gitconfig setlocal noexpandtab shiftwidth=8 softtabstop=0
+" t Autowrap non-comment text
+" c Autowrap comments
+" q Allow formatting comments with gq
+set formatoptions=tcq
 
 "---------------------------------------------------------------
 " Motion
