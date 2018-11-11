@@ -60,6 +60,7 @@ envs() { env | sort; }
 gw() { gradlew "$@"; }
 la() { ls -GFlas "$@" ; }
 path() { echo -e ${PATH//:/\\n}; }
+ww() { which "$@" && readlink $(which "$@") || true ; }
 
 # Docker shortcuts
 dc() { docker container "$@"; }
