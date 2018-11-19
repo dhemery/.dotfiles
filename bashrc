@@ -9,9 +9,11 @@ export SSL_CERT_FILE="$HOME/.ssh/cacert.pem"
 
 ruby_bin=/usr/local/opt/ruby/bin
 gems_bin=/usr/local/lib/ruby/gems/2.5.0/bin
+python_bin=/usr/local/opt/python/libexec/bin
 
 [[ -d "${ruby_bin}" ]] && export PATH=${ruby_bin}:$PATH
 [[ -d "${gems_bin}" ]] && export PATH=${gems_bin}:$PATH
+[[ -d "${python_bin}" ]] && export PATH=${python_bin}:$PATH
 
 # Source the first argument that is an existing file
 source_first() {
