@@ -1,9 +1,8 @@
 [alias]
 	a = add
 	aa = add -A
-	al = "!git config -l | grep alias | cut -c 7-"
 	b = branch
-	ba = branch -avv
+	ba = branch --all --verbose --verbose
 	c = commit
 	d = diff
 	dh = diff HEAD
@@ -11,8 +10,10 @@
 	f = fetch
 	g = grep
 	l = log --graph --oneline -40
-	la = log --graph
+	la = "!git config --list | grep alias | cut -c 7-"
+	lc = config --list
 	ll = log --graph --oneline
+	lv = log --graph
 	m = merge
 	mt = mergetool
 	n = clean
