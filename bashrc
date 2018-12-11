@@ -64,22 +64,25 @@ done
 # TODO: Check for direnv before running this?
 eval "$(direnv hook bash)"
 
-envs() { env | sort; }
-gw() { gradlew "$@"; }
-la() { ls -GFlas "$@" ; }
-path() { echo -e ${PATH//:/\\n}; }
+alias envs='env | sort'
+alias gw='./gradlew'
+alias la='ls -GFlas'
+alias ll='ls -l'
+alias path='echo -e "${PATH//:/\\n}"'
+alias paths='path | sort --ignore-case'
+
 ww() { which "$@" && readlink $(which "$@") || true ; }
 
 # Docker shortcuts
-dc() { docker container "$@"; }
-dcls() { dc list "$@"; }
-dcla() { dcls -a  "$@"; }
-di() { docker image "$@"; }
-dils() { di list "$@"; }
-dila() { dils -a "$@"; }
-dps() { docker ps "$@"; }
-dpsa() { dps -a "$@"; }
-dr() { docker run "$@"; }
+alias dc='docker container'
+alias dcls='dc list'
+alias dcla='dcls -a'
+alias di='docker image'
+alias dils='di list'
+alias dila='dils -a'
+alias dps='docker ps'
+alias dpsa='dps -a'
+alias dr='docker run'
 
 complete -F _gradle -d gw
 
