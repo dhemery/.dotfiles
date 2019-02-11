@@ -6,7 +6,7 @@
 	c = commit
 	d = diff
 	dh = diff HEAD
-	ds = diff --staged
+	di = diff --staged
 	f = fetch
 	g = grep
 	l = log --graph --oneline -40
