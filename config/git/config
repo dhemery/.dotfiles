@@ -9,7 +9,7 @@
 	di = diff --staged
 	f = fetch
 	g = grep
-	l = log --graph --oneline -40
+	l = log --graph --oneline -20
 	la = "!git config --list | grep alias | cut -c 7-"
 	lc = config --list
 	ll = log --graph --oneline
