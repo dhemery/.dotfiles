@@ -3,6 +3,8 @@
 	aa = add -A
 	b = branch
 	ba = branch --all --verbose --verbose
+	bl = branch --verbose --verbose
+	br = branch --remote --verbose --verbose
 	c = commit
 	d = diff
 	dh = diff HEAD
