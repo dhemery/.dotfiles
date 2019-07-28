@@ -20,8 +20,8 @@
 	m = merge
 	mt = mergetool
 	n = clean
-	o = checkout
-	ob = checkout -b
+	nb = checkout -b
+	ob = checkout
 	pl = pull
 	ps = push
 	pr = pull --rebase
