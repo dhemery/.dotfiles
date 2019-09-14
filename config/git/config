@@ -3,8 +3,8 @@
 	aa = add -A
 	b = branch
 	ba = branch --all --verbose --verbose
-	ci = commit
-	co = checkout
+	c = commit
+	co = switch
 	d = diff
 	f = fetch
 	g = grep
@@ -19,6 +19,8 @@
 	ps = push
 	pr = pull --rebase
 	r = rebase
+        rs = restore
+        ru = remote update
 	s = status
 	su = submodule update --init --recursive
 
