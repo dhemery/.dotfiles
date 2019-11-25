@@ -23,6 +23,7 @@
         ru = remote update
 	s = status
 	su = submodule update --init --recursive
+        xx = restore -WSs@
 
 [color]
 	branch = auto
