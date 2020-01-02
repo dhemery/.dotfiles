@@ -9,6 +9,9 @@ export VISUAL=vim
 bindkey -v
 export KEYTIMEOUT=1
 
+setopt autocd
+setopt prompt_subst
+
 typeset -gU cdpath fpath mailpath path
 cdpath=(~ $cdpath)
 fpath=($ZDOTDIR/functions $fpath)
@@ -45,4 +48,14 @@ export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 
 export SSL_CERT_FILE=~/.ssh/cacert.pem
 
+autoload -Uz vcs_info
+zstyle ':vcs_info:git*' actionformats '%a'
+zstyle ':vcs_info:git*' formats '%r[%b]/%S'
+zstyle ':vcs_info:git:*' branchformat '%b%{'${fg[yellow]}'%}:%r'
+zstyle ':vcs_info:*' enable git
+# precmd_vcs_info() { vcs_info }
+# precmd_functions+=( precmd_vcs_info )
+# PS1='${vcs_info_msg_0_}'
+
 . ~/.dale/zshrc
+
