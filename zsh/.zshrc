@@ -66,7 +66,7 @@ zstyle ':vcs_info:git:*' unstagedstr '*'
 zstyle ':vcs_info:git:*' formats "${repo_prompt} [${branch_prompt}${staged_prompt}${unstaged_prompt}]"
 
 # Show dirs, always showing first one and last three.
-PROMPT='[%F{blue}%(5~|%-1~/…/%3~|%4~)%f] %B%#%b '
+PROMPT='[%F{blue}%(5~|%-1~/…/%3~|%4~)%f] %(?..%F{red}%?%f )%B%#%b '
 RPROMPT='${vim_mode} ${vcs_info_msg_0_}'
 
 . ~/.dale/zshrc
