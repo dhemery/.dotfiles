@@ -9,7 +9,6 @@ export VISUAL=vim
 bindkey -v
 export KEYTIMEOUT=1
 
-setopt prompt_subst
 setopt autocd
 
 autoload -U colors
@@ -51,22 +50,7 @@ export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 
 export SSL_CERT_FILE=~/.ssh/cacert.pem
 
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-repo_prompt="%{$fg[blue]%}%r%{$reset_color%}"
-branch_prompt="%{$fg[green]%}%b%{$reset_color%}"
-staged_prompt="%{$fg[yellow]%}%c%{$reset_color%}"
-unstaged_prompt="%{$fg[red]%}%u%{$reset_color%}"
-
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr '+'
-zstyle ':vcs_info:git:*' unstagedstr '*'
-zstyle ':vcs_info:git:*' formats "${repo_prompt} [${branch_prompt}${staged_prompt}${unstaged_prompt}]"
-
-# Show dirs, always showing first one and last three.
-PROMPT='[%F{blue}%(5~|%-1~/…/%3~|%4~)%f] %(?..%F{red}%?%f )%B%#%b '
-RPROMPT='${vim_mode} ${vcs_info_msg_0_}'
+. $ZDOTDIR/prompt.zsh
 
 . ~/.dale/zshrc
+
