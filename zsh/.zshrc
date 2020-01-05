@@ -1,9 +1,4 @@
-export ZSH_DATA_HOME=$XDG_DATA_HOME/zsh
-export HISTFILE=$ZSH_DATA_HOME/zsh_history
-export HISTSIZE=1000
-export SAVEHIST=$HISTSIZE
-export EDITOR=vim
-export VISUAL=vim
+export HISTFILE=$ZSH_CACHE_DIR/zhistory
 
 # Enable vim command mode with 0.1s lag
 bindkey -v

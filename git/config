@@ -37,9 +37,6 @@
 [diff]
 	tool = opendiff
 
-[include]
-	path = ~/.dale/gitconfig
-
 [push]
 	default = current
 
