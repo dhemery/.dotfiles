@@ -12,7 +12,9 @@ colors
 typeset -gU cdpath fpath mailpath path
 cdpath=(~ $cdpath)
 fpath=($ZDOTDIR/functions $fpath)
-path=(~/.bin $path)
+
+llvmbin=$(brew --prefix llvm)/bin
+path=(~/.bin $llvmbin $path)
 
 autoload -U +X compinit
 compinit -d $ZSH_DATA_HOME/.zcompdump
