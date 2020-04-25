@@ -10,7 +10,7 @@ ZSH_COMPDUMP=$ZSH_DATA_HOME/.zcompdump
 export ZSH=~/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
-plugins=(dash direnv docker git golang)
+plugins=(dash direnv docker git golang vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
