@@ -6,12 +6,10 @@
 
 [core]
 	autocrlf = input
+  pager = less -FRX
 
 [diff]
 	tool = opendiff
-
-[pager]
-	branch = false
 	
 [push]
 	default = current

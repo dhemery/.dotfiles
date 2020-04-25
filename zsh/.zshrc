@@ -8,10 +8,11 @@ export SSL_CERT_FILE=~/.ssh/cacert.pem
 ZSH_COMPDUMP=$ZSH_DATA_HOME/.zcompdump
 
 export ZSH=~/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 plugins=(dash direnv docker git golang vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
+source $ZDOTDIR/prompt.zsh
 [[ -f ~/.dale/zshrc ]] && source ~/.dale/zshrc
