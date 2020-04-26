@@ -10,7 +10,10 @@
 
 [diff]
 	tool = opendiff
-	
+
+[include]
+	path = ~/.dale/git/config
+
 [push]
 	default = current
 

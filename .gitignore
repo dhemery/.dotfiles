@@ -1,1 +1,7 @@
-/inkscape/
+*
+
+!.gitignore
+!git
+!vim
+!zsh
+!README.md
