@@ -49,7 +49,8 @@ set cmdheight=2     " Set the command window to 2 lines, to
                     " avoid having to press <enter> to continue
 set visualbell      " Visual bell instead of beeping ...
 set t_vb=           " ... and turn off the bell altogether
-" set cursorline      " Highlight the line the cursor is on
+set cursorline      " Highlight the line the cursor is on
+set cursorlineopt=number " Highlight only the line number
 set linebreak       " Wrap lines at more reasonable places.
 set scrolloff=3     " # Lines to retain when scrolling
 
@@ -64,7 +65,7 @@ nnoremap <silent> <leader>s :set list!
 "---------------------------------------------------------------
 
 set background=dark
-colorscheme slate
+colorscheme torte
 syntax enable       " Enable syntax highlighting
 
 "---------------------------------------------------------------
