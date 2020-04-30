@@ -65,7 +65,7 @@ nnoremap <silent> <leader>s :set list!
 "---------------------------------------------------------------
 
 set background=dark
-colorscheme torte
+colorscheme slate
 syntax enable       " Enable syntax highlighting
 
 "---------------------------------------------------------------

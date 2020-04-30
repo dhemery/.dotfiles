@@ -1,20 +1,31 @@
 export HISTFILE=$ZSH_CACHE_DIR/zhistory
+
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
-export ZSH=~/.oh-my-zsh
 
-# Switch to JDK 1.8, 9, 10, 11, …
+# Enable vim command mode with 0.1s lag
+bindkey -v
+export KEYTIMEOUT=1
+
+setopt autocd
+
+autoload -U colors
+colors
+
+typeset -gU cdpath fpath mailpath path
+cdpath=(~ $cdpath)
+
+autoload -U +X compinit
+compinit -d $ZSH_DATA_HOME/.zcompdump
+compdef _gradle gw
+
 jdk () { export JAVA_HOME=$(/usr/libexec/java_home -v "$@"); }
+ww() { which "$@" && readlink $(which "$@") || true ; }
+
+eval "$(direnv hook zsh)"
+
+source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/prompt.zsh
 
 local_zshrc=~/.dale/zsh/.zshrc
 [[ -f $local_zshrc ]] && source $local_zshrc
-
-ZSH_COMPDUMP=$ZSH_CACHE_DIR/zcompdump
-ZSH_THEME=""
-
-path=(~/.bin $path)
-cdpath=(~ $cdpath)
-plugins=(dash direnv docker git golang vi-mode $plugins)
-
-source $ZSH/oh-my-zsh.sh
-source $ZDOTDIR/prompt.zsh
