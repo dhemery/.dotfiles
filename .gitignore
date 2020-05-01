@@ -1,7 +1,7 @@
-*
+/*
 
-!.gitignore
-!git
-!vim
-!zsh
-!README.md
+!/.gitignore
+!/git
+!/vim
+!/zsh
+!/README.md
