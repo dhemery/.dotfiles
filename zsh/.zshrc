@@ -1,6 +1,6 @@
 export HISTFILE=$ZSH_CACHE_DIR/zhistory
-
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+export MYVIMRC=$XDG_CONFIG_HOME/vim/vimrc
+export VIMINIT='source $MYVIMRC'
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 
 # Enable vim command mode with 0.1s lag
