@@ -2,7 +2,6 @@ set directory=$XDG_CACHE_HOME/vim,~/,/tmp
 set backupdir=$XDG_CACHE_HOME/vim,~/,/tmp
 set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
-let g:netrw_home='$XDG_CACHE_HOME/vim'
 
 "---------------------------------------------------------------
 " General settings
@@ -55,7 +54,7 @@ set scrolloff=3     " # Lines to retain when scrolling
 " Consider tabs, trailing space, eol as invisible characters
 set listchars=tab:>-,trail:·,eol:$
 
-" ,s: Toggle showing invisible chracters
+" Toggle showing invisible chracters
 nnoremap <silent> <leader>s :set list!
 
 "---------------------------------------------------------------
@@ -120,4 +119,15 @@ augroup ShowActiveWindow
     autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     autocmd WinLeave * setlocal nocursorline
 augroup END
+
+"---------------------------------------------------------------
+" Browsing
+"---------------------------------------------------------------
+nnoremap <leader>x :Vexplore<CR>
+let g:netrw_altv=1
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_home='$XDG_CACHE_HOME/vim'
+let g:netrw_liststyle=3
+let g:netrw_winsize=25
 
