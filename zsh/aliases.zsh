@@ -47,6 +47,7 @@ alias gxx='git restore -WSs@'
 
 # Go
 alias gob='go build'
+alias goba='go build ./...'
 alias goc='go clean'
 alias god='go doc'
 alias gof='go fmt'
