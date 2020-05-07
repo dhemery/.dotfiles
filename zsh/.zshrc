@@ -27,5 +27,5 @@ eval "$(direnv hook zsh)"
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/prompt.zsh
 
-local_zshrc=~/.dale/zsh/.zshrc
-[[ -f $local_zshrc ]] && source $local_zshrc
+private_zshrc=~/.dale/zsh/.zshrc
+[[ -f $private_zshrc ]] && source $private_zshrc
