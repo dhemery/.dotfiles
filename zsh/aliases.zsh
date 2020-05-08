@@ -7,9 +7,13 @@ alias fpaths='fpath | sort --ignore-case'
 alias path='printf "%s\n" $path'
 alias paths='path | sort --ignore-case'
 
-# General commands
+# Unix
 alias la='ls -GFlas'
 alias ll='ls -l'
+
+# Editor
+alias vi=nvim
+alias vim=nvim
 
 # Docker
 alias dcla='docker container ls --all'
