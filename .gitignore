@@ -2,6 +2,7 @@
 
 !/.gitignore
 !/git
+!/nvim
 !/vim
 !/zsh
 !/README.md
