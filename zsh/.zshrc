@@ -1,7 +1,7 @@
 export HISTFILE=$ZSH_CACHE_DIR/zhistory
-# export MYVIMRC=$XDG_CONFIG_HOME/vim/vimrc
-# export VIMINIT='source $MYVIMRC'
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+# Make ls colorize entries according to type
+export CLICOLOR=true
 
 # Enable vim command mode with 0.1s lag
 bindkey -v

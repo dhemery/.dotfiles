@@ -8,8 +8,8 @@ alias path='printf "%s\n" $path'
 alias paths='path | sort --ignore-case'
 
 # Unix
-alias la='ls -GFlas'
-alias ll='ls -l'
+alias la='ls -Ahl'
+alias ll='ls -hl'
 
 # Editor
 alias vi=nvim
