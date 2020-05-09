@@ -1,3 +1,4 @@
+export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export HISTFILE=$ZSH_CACHE_DIR/zhistory
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 # Make ls colorize entries according to type
