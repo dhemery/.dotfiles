@@ -40,12 +40,22 @@ than symbolic links and bare git repositories.
 
 ## Setup
 
-These are the standard configuration files I set up.
-I don't keep these files under version control,
-which means I have to add them on each computer.
+1. Clone this repository to `~/.dotfiles/shared`:
+
+    ```
+    mkdir ~/.dotfiles
+    git clone git@github.com:dhemery/.dotfiles .dotfiles/shared
+    ```
+
+1. Add local configuration files to `~/.dotfiles/local` as desired.
+1. Create the standard configuration files
+  that delegate to my shared and local configuration files.
+
+### The Standard "Delegating" Configuration Files
 
 See the `./setup` folder in this repo
-for the content that I start with.
+for the content that I start with
+for these files.
 
 `~/.zshenv`
 : Sets up a few key shell variables,
