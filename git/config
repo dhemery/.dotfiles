@@ -4,6 +4,9 @@
 	grep = auto
 	status = auto
 
+[commit]
+	verbose = true
+
 [core]
 	autocrlf = input
 	pager = less -FRX
@@ -11,13 +14,8 @@
 [diff]
 	tool = opendiff
 
-[include]
-	path = ~/.dale/git/config
-
 [push]
 	default = current
 
 [rerere]
 	enabled = true
-[commit]
-	verbose = true

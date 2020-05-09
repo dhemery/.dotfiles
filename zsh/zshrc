@@ -1,7 +1,5 @@
-export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
-export HISTFILE=$ZSH_CACHE_DIR/zhistory
+thisdir=$0:a:h
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
-# Make ls colorize entries according to type
 export CLICOLOR=true
 
 # Enable vim command mode with 0.1s lag
@@ -13,7 +11,7 @@ setopt autocd
 autoload -U colors
 colors
 
-typeset -gU cdpath fpath mailpath path
+typeset -gU cdpath fpath path
 cdpath=(~ $cdpath)
 
 autoload -U +X compinit
@@ -25,8 +23,5 @@ ww() { which "$@" && readlink $(which "$@") || true ; }
 
 eval "$(direnv hook zsh)"
 
-source $ZDOTDIR/aliases.zsh
-source $ZDOTDIR/prompt.zsh
-
-private_zshrc=~/.dale/zsh/.zshrc
-[[ -f $private_zshrc ]] && source $private_zshrc
+. $thisdir/aliases.zsh
+. $thisdir/prompt.zsh
