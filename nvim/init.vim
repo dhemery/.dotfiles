@@ -1,14 +1,4 @@
-set runtimepath+=$DHE_SHARED_DOTFILES/nvim/runtime
-
-"---------------------------------------------------------------
-" Plugins
-"---------------------------------------------------------------
-call plug#begin(stdpath('data').'/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'itchyny/lightline.vim'
-" Plug 'neovim/nvim-lsp'
-call plug#end()
+set packpath+=$DHE_SHARED_DOTFILES/nvim
 
 "---------------------------------------------------------------
 " General settings
