@@ -11,10 +11,6 @@ alias paths='path | sort --ignore-case'
 alias la='ls -Ahl'
 alias ll='ls -hl'
 
-# Editor
-alias vi=nvim
-alias vim=nvim
-
 # Docker
 alias dcla='docker container ls --all'
 alias dcls='docker container ls'

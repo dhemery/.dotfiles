@@ -78,3 +78,6 @@ for these files.
 `~/.config/zsh/.zshrc`
 : Loads my custom `zshrc` files.
 
+`~/.vimrc`
+: Loads my custom `vimrc` files.
+
