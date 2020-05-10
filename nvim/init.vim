@@ -1,3 +1,15 @@
+set runtimepath+=$DHE_SHARED_DOTFILES/nvim/runtime
+
+"---------------------------------------------------------------
+" Plugins
+"---------------------------------------------------------------
+call plug#begin(stdpath('data').'/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/lightline.vim'
+" Plug 'neovim/nvim-lsp'
+call plug#end()
+
 "---------------------------------------------------------------
 " General settings
 "---------------------------------------------------------------
@@ -18,8 +30,6 @@ let mapleader=' ' " Use space as leader
 set number          " Display line numbers
 set cmdheight=2     " Set the command window to 2 lines, to
                     " avoid having to press <enter> to continue
-set cursorline      " Highlight the line the cursor is on
-set guicursor=a:ver25-blinkon1  " Make cursor a vertical line
 set linebreak       " Wrap lines at more reasonable places.
 
 "---------------------------------------------------------------
@@ -27,6 +37,10 @@ set linebreak       " Wrap lines at more reasonable places.
 "---------------------------------------------------------------
 
 colorscheme slate
+set cursorline      " Highlight the line the cursor is on
+set guicursor=a:ver25-blinkon1  " Make cursor a vertical line
+execute 'highlight CursorLine cterm=NONE ctermbg=236'
+
 "---------------------------------------------------------------
 " Files
 "---------------------------------------------------------------
@@ -79,6 +93,6 @@ nnoremap <leader>x :e.<CR>
 let g:netrw_altv=1            " v opens files to the right
 let g:netrw_banner=1          " Show the banner (with help)
 let g:netrw_browse_split=0    " Open files in the browser window
-let g:netrw_home='$XDG_CACHE_HOME/vim'
+let g:netrw_home=stdpath('cache')
 let g:netrw_liststyle=3       " Tree view
 
