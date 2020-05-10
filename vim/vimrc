@@ -1,4 +1,4 @@
-set runtimepath+=$DHE_SHARED_DOTFILES/vim
+set runtimepath+=$DHE_SHARED_DOTFILES/vim/runtime
 
 "---------------------------------------------------------------
 " General settings
