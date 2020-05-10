@@ -44,7 +44,7 @@ than symbolic links and bare git repositories.
 
     ```
     mkdir ~/.dotfiles
-    git clone git@github.com:dhemery/.dotfiles .dotfiles/shared
+    git clone git@github.com:dhemery/.dotfiles ~/.dotfiles/shared
     ```
 
 1. Add local configuration files to `~/.dotfiles/local` as desired.
