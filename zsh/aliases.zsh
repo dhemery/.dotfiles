@@ -7,12 +7,13 @@ alias fpaths='fpath | sort --ignore-case'
 alias path='printf "%s\n" $path'
 alias paths='path | sort --ignore-case'
 
-# Unix
+# Replacements
+alias vim='nvim'
+
+# Enhancements
 alias la='ls -Ahl'
 alias ll='ls -hl'
-
-# Editors
-alias vim='nvim'
+alias trig='tree -I .git'
 
 # Docker
 alias dcla='docker container ls --all'
@@ -33,6 +34,7 @@ alias gcon='git config'
 alias gcong='git config --global'
 alias gconl='git config --local'
 alias gd='git diff'
+alias gdi='git diff --cached'
 alias gf='git fetch'
 alias gg='git grep'
 alias gl='git log --graph --oneline -20'
