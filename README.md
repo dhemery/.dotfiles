@@ -1,8 +1,6 @@
 # Dale's Dot Files
 
-## Dot File Delegation
-
-I use a "delegation" approach to dot files:
+I take a "delegation" approach to dot files:
 
 - Put configuration files in "standard" places.
   That is,
@@ -31,50 +29,23 @@ I use a "delegation" approach to dot files:
   causes the local configuration
   to override the shared configuration.
 
-This delegation style of configuration
-requires more setup than I prefer to do
-(see below),
-but for now it feels less cumbersome
-and more manageable
-than symbolic links and bare git repositories.
+## Installation
 
-## Setup
+The `.home` directory
+contains all of my "standard" configuration files.
 
-1. Clone this repository to `~/.dotfiles/shared`:
+The `.install` script
+simply copies each file in and below `.home`
+to the corresponding location in `$HOME`,
+creating intermediate directories as required.
 
-    ```
-    mkdir ~/.dotfiles
-    git clone git@github.com:dhemery/.dotfiles ~/.dotfiles/shared
-    ```
+So…
 
-1. Add local configuration files to `~/.dotfiles/local` as desired.
-1. Create the standard configuration files
-  that delegate to my shared and local configuration files.
-
-### The Standard "Delegating" Configuration Files
-
-See the `./setup` folder in this repo
-for the content that I start with
-for these files.
-
-`~/.zshenv`
-: Sets up a few key shell variables,
-  then loads my custom `zshenv` files.
-  This file does a bit more direct configuration
-  than the others, mainly exporting environment variables
-  that identify where to find
-  my custom configuration files.
-
-`~/.config/git/config`
-: Declares `include.path` values
-  to include my custom git config files.
-  Alas, git config files do not expand environment variables,
-  so I had to hard-code the paths
-  to my custom git config files.
-
-`~/.config/nvim/init.vim`
-: Loads my custom `init.vim` files.
-
-`~/.config/zsh/.zshrc`
-: Loads my custom `zshrc` files.
+1. **Read the files in `.home`,**
+  to make sure
+  you want them all copied to your `$HOME` directory.
+1. Read the files in `.home` **at least one more time,**
+  to make **doubly** sure
+  you want them all copied to your `$HOME` directory.
+1. Run: `.install`
 

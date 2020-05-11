@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+thisdir=$0:a:h
+
+cd $thisdir/.home
+for f in $(find . -type f); do
+  from="$PWD/${f#./}"
+  to="$HOME/${f#./}"
+  mkdir -v -p $(dirname $to)
+  cp -v $from $to
+done
+
