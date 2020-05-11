@@ -26,10 +26,11 @@ set linebreak       " Wrap lines at more reasonable places.
 " Colors
 "---------------------------------------------------------------
 
+syntax enable
 colorscheme slate
-set cursorline      " Highlight the line the cursor is on
-set guicursor=a:ver25-blinkon1  " Make cursor a vertical line
-execute 'highlight CursorLine cterm=NONE ctermbg=236'
+highlight CursorLineNr cterm=underline
+highlight CursorLine cterm=NONE ctermbg=236
+set guicursor=a:ver25
 
 "---------------------------------------------------------------
 " Files
