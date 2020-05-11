@@ -1,4 +1,6 @@
 thisdir=$0:a:h
+export EDITOR=nvim
+export VISUAL=nvim
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 export CLICOLOR=true
 
