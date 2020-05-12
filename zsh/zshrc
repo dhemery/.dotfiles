@@ -20,8 +20,8 @@ autoload -U +X compinit
 compinit -d $ZSH_DATA_HOME/.zcompdump
 compdef _gradle gw
 
-jdk () { export JAVA_HOME=$(/usr/libexec/java_home -v "$@"); }
 ww() { which "$@" && readlink $(which "$@") || true ; }
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 eval "$(direnv hook zsh)"
 

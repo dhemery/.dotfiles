@@ -7,13 +7,12 @@ alias fpaths='fpath | sort --ignore-case'
 alias path='printf "%s\n" $path'
 alias paths='path | sort --ignore-case'
 
-# Replacements
-alias vim='nvim'
-
-# Enhancements
+# General
+alias jdk='/usr/libexec/java_home'
 alias la='ls -Ahl'
 alias ll='ls -hl'
 alias trig='tree -I .git'
+alias vim='nvim'
 
 # Docker
 alias dcla='docker container ls --all'
