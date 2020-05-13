@@ -1,0 +1,21 @@
+#!/usr/bin/env zsh
+
+if [[ $# -lt 2 || $# -gt 3 ]]; then
+  echo "Usage: ${0:t} author repo [opt]"
+  exit 1
+fi
+
+# rootdir=${0:A:h:h}
+
+pack_author=$1
+pack_repo=$2
+pack_type=${3:-start}
+
+submodule_parent="nvim/pack/${pack_author}/${pack_type}"
+submodule_path="${submodule_parent}/${pack_repo}"
+github_repository="git@github.com:${pack_author}/${pack_repo}"
+
+setopt err_exit
+setopt xtrace
+git submodule add ${github_repository} ${submodule_path}
+git submodule update --init --recursive ${submodule_path}

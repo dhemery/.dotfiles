@@ -10,14 +10,20 @@ The commands below use `<path>`
 to refer to the working tree path
 where a given package is installed.
 
-There are two directories to install packages:
+There are patterns of paths I use
+to install packages:
 
-- `nvim/pack/dhemery/start/<package-name>`
-- `nvim/pack/dhemery/opt/<package-name>`
+- `nvim/pack/<author>/start/<package>`
+- `nvim/pack/<author>/opt/<package>`
 
-Install a package to the `start` directory
+where `<author>` is
+the name of the package's author
+and `<package>` is
+the name of the package.
+
+Use the "start" form
 if you want vim to always start the package.
-Use the `opt` directory
+Use the "opt" form
 to make the package optional
 (see below).
 
@@ -26,6 +32,12 @@ to make the package optional
     git submodule add <package-repo-url> <path>
     git submodule update --init --recursive <path>
     git commit
+
+Or use the `.bin/padd` command,
+which will add the package,
+but not commit the addition:
+
+    padd <author> <package>
 
 ## Update a Package
 
@@ -43,6 +55,12 @@ to make the package optional
     git rm <path>
     rm -rf .git/modules/<path>
     git commit
+
+Or use the `.bin/prm` command,
+which will remove the package,
+but not commit the removal:
+
+    prm <author> <package>
 
 ## Starting an Optional Package
 
