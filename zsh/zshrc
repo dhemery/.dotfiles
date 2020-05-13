@@ -1,7 +1,6 @@
 thisdir=$0:a:h
 export EDITOR=nvim
 export VISUAL=nvim
-export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 export CLICOLOR=true
 
 # Enable vim command mode with 0.1s lag
@@ -20,8 +19,8 @@ autoload -U +X compinit
 compinit -d $ZSH_DATA_HOME/.zcompdump
 compdef _gradle gw
 
-ww() { which "$@" && readlink $(which "$@") || true ; }
-export JAVA_HOME=$(/usr/libexec/java_home)
+JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
+[[ $? -eq 0 ]] && export JAVA_HOME
 
 eval "$(direnv hook zsh)"
 
