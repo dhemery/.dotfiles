@@ -12,7 +12,6 @@ alias jdk='/usr/libexec/java_home'
 alias la='ls -Ahl'
 alias ll='ls -hl'
 alias trig='tree -I .git'
-alias vim='nvim'
 alias ww='whence -Sv'
 
 # Docker
