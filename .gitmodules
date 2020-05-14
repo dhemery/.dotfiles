@@ -1,3 +1,6 @@
 [submodule "nvim/pack/itchyny/start/lightline.vim"]
 	path = nvim/pack/itchyny/start/lightline.vim
 	url = git@github.com:itchyny/lightline.vim
+[submodule "nvim/pack/editorconfig/start/editorconfig-vim"]
+	path = nvim/pack/editorconfig/start/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim
