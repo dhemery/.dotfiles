@@ -10,6 +10,7 @@
 [core]
 	autocrlf = input
 	pager = less -FRX
+        excludesFile = ~/.dotfiles/shared/git/ignore
 
 [diff]
 	tool = opendiff
