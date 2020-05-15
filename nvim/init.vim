@@ -15,11 +15,6 @@ set hidden   " Abandoning a buffer hides it instead of closing.
 "---------------------------------------------------------------
 
 set path+=**
-let g:netrw_altv=1            " v opens files to the right
-let g:netrw_banner=1          " Show the banner (with help)
-let g:netrw_browse_split=0    " Open files in the browser window
-let g:netrw_home=stdpath('cache')
-let g:netrw_liststyle=3       " Tree view
 
 "---------------------------------------------------------------
 " Display
