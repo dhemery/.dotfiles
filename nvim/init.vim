@@ -30,7 +30,6 @@ set noshowmode      " lightline shows the mode.
 "---------------------------------------------------------------
 
 colorscheme slate
-set guicursor=a:ver25
 
 "---------------------------------------------------------------
 " Search
