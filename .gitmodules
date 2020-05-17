@@ -4,3 +4,12 @@
 [submodule "nvim/pack/editorconfig/start/editorconfig-vim"]
 	path = nvim/pack/editorconfig/start/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim
+[submodule "nvim/pack/nanotech/start/jellybeans.vim"]
+	path = nvim/pack/nanotech/start/jellybeans.vim
+	url = git@github.com:nanotech/jellybeans.vim
+[submodule "nvim/pack/marcopaganini/start/termschool-vim-theme"]
+	path = nvim/pack/marcopaganini/start/termschool-vim-theme
+	url = git@github.com:marcopaganini/termschool-vim-theme
+[submodule "nvim/pack/jinfield/start/wombat256.vim"]
+	path = nvim/pack/jinfield/start/wombat256.vim
+	url = git@github.com:jinfield/wombat256.vim

@@ -29,7 +29,10 @@ set noshowmode      " lightline shows the mode.
 " Syntax
 "---------------------------------------------------------------
 
-colorscheme slate
+set termguicolors
+" colorscheme jellybeans
+colorscheme termschool
+" colorscheme wombat256mod
 
 "---------------------------------------------------------------
 " Search
@@ -57,4 +60,3 @@ nnoremap <Up> <nop>
 nnoremap <Down> <nop>
 nnoremap <Left> <nop>
 nnoremap <Right> <nop>
-
