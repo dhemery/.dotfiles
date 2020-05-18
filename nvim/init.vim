@@ -29,7 +29,9 @@ set noshowmode      " lightline shows the mode.
 " Syntax
 "---------------------------------------------------------------
 
-set termguicolors
+if $COLORTERM == 'truecolor'
+  set termguicolors
+endif
 " colorscheme jellybeans
 colorscheme termschool
 " colorscheme wombat256mod
