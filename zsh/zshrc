@@ -1,6 +1,6 @@
-thisdir=$0:a:h
 export EDITOR=nvim
 export VISUAL=nvim
+export PAGER='less -FRX'
 export CLICOLOR=true
 
 # Enable vim command mode with 0.1s lag
@@ -24,5 +24,6 @@ JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 
 eval "$(direnv hook zsh)"
 
+thisdir=$0:a:h
 . $thisdir/aliases.zsh
 . $thisdir/prompt.zsh
